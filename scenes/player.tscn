@@ -2,26 +2,27 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ccqpj"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jmsm"]
-albedo_color = Color(1, 0, 1, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rocxm"]
+albedo_color = Color(0.596078, 0, 1, 1)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_5gdu3"]
-material = SubResource("StandardMaterial3D_7jmsm")
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5qahc"]
+material = SubResource("StandardMaterial3D_rocxm")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k81sd"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cf3lc"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_ccqpj")
 
 [node name="Head" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5242, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_5gdu3")
+mesh = SubResource("CapsuleMesh_5qahc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_k81sd")
+shape = SubResource("CapsuleShape3D_cf3lc")

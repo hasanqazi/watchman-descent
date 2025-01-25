@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://clgq07hc0fwx3"]
+[gd_scene load_steps=7 format=3 uid="uid://clgq07hc0fwx3"]
 
 [ext_resource type="PackedScene" uid="uid://fixg8jru77qn" path="res://assets/models/grass.glb" id="1_612mp"]
 [ext_resource type="PackedScene" uid="uid://ccejkq2fk2ey" path="res://scenes/player.tscn" id="2_4ekkr"]
+[ext_resource type="PackedScene" uid="uid://bsoagng253ngu" path="res://scenes/guardhouse.tscn" id="3_ifcml"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7mv5"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -12,6 +13,7 @@ sky_material = SubResource("ProceduralSkyMaterial_b7mv5")
 
 [sub_resource type="Environment" id="Environment_lntvv"]
 background_mode = 2
+background_energy_multiplier = 0.05
 sky = SubResource("Sky_u7icn")
 tonemap_mode = 3
 glow_enabled = true
@@ -29,3 +31,16 @@ environment = SubResource("Environment_lntvv")
 
 [node name="Player" parent="." instance=ExtResource("2_4ekkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19861, 0, 0.0239706)
+walking_speed = 3.0
+sprinting_speed = 5.0
+
+[node name="guardhouse" parent="." instance=ExtResource("3_ifcml")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0902703, -0.299215, -9.04907)
+
+[node name="SpotLight3D" parent="guardhouse" index="4"]
+light_color = Color(1, 0.894118, 0.752941, 1)
+light_energy = 1.0
+spot_range = 10.3404
+spot_angle = 89.99
+
+[editable path="guardhouse"]
