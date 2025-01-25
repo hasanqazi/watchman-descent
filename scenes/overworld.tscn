@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://clgq07hc0fwx3"]
+
+[ext_resource type="PackedScene" uid="uid://fixg8jru77qn" path="res://assets/models/grass.glb" id="1_612mp"]
+[ext_resource type="PackedScene" uid="uid://ccejkq2fk2ey" path="res://scenes/player.tscn" id="2_4ekkr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7mv5"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_u7icn"]
+sky_material = SubResource("ProceduralSkyMaterial_b7mv5")
+
+[sub_resource type="Environment" id="Environment_lntvv"]
+background_mode = 2
+sky = SubResource("Sky_u7icn")
+tonemap_mode = 3
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.437513, 0.576041, 0.624464, 1)
+volumetric_fog_density = 0.2395
+volumetric_fog_emission_energy = 0.0
+
+[node name="Overworld" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lntvv")
+
+[node name="grass" parent="." instance=ExtResource("1_612mp")]
+
+[node name="Player" parent="." instance=ExtResource("2_4ekkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19861, 0, 0.0239706)
