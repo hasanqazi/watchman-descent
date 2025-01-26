@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var head: Node3D = %Head
 
+
 var current_speed = 5.0
 
 @export var walking_speed = 5.0

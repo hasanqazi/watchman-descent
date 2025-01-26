@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c76txuxbai1sn"]
+
+[ext_resource type="Script" path="res://scripts/flashlight.gd" id="1_u85ar"]
+[ext_resource type="PackedScene" uid="uid://ctwuj2k0ddikr" path="res://assets/models/flashlight.glb" id="2_owyqx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nta7m"]
+size = Vector3(0.159912, 0.166016, 0.339844)
+
+[node name="Flashlight" type="Node3D"]
+script = ExtResource("1_u85ar")
+interactable_name = "Flashlight"
+interact_cooldown = 1.0
+interact_text = "Pickup"
+
+[node name="flashlight" parent="." instance=ExtResource("2_owyqx")]
+transform = Transform3D(1, -6.72492e-09, -5.20406e-10, 6.71265e-09, 0.984683, 0.174353, -6.60073e-10, -0.174353, 0.984683, 0, 0.0534244, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000610352, 0.0830078, 0.0175781)
+shape = SubResource("BoxShape3D_nta7m")

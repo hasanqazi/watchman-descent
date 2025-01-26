@@ -3,29 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://fixg8jru77qn" path="res://assets/models/grass.glb" id="1_612mp"]
 [ext_resource type="PackedScene" uid="uid://ccejkq2fk2ey" path="res://scenes/player.tscn" id="2_4ekkr"]
 [ext_resource type="PackedScene" uid="uid://bsoagng253ngu" path="res://scenes/guardhouse.tscn" id="3_ifcml"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7mv5"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_u7icn"]
-sky_material = SubResource("ProceduralSkyMaterial_b7mv5")
-
-[sub_resource type="Environment" id="Environment_lntvv"]
-background_mode = 2
-background_energy_multiplier = 0.05
-sky = SubResource("Sky_u7icn")
-tonemap_mode = 3
-glow_enabled = true
-fog_enabled = true
-fog_light_color = Color(0.437513, 0.576041, 0.624464, 1)
-volumetric_fog_density = 0.2395
-volumetric_fog_emission_energy = 0.0
+[ext_resource type="PackedScene" uid="uid://b0e304ng4h18u" path="res://scenes/cctv_pole.tscn" id="4_ux0w4"]
+[ext_resource type="PackedScene" uid="uid://i6f3bnm3tq2p" path="res://assets/models/table.glb" id="5_qrglp"]
+[ext_resource type="PackedScene" uid="uid://c76txuxbai1sn" path="res://scenes/flashlight.tscn" id="6_rfp72"]
 
 [node name="Overworld" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_lntvv")
 
 [node name="grass" parent="." instance=ExtResource("1_612mp")]
 
@@ -42,5 +24,14 @@ light_color = Color(1, 0.894118, 0.752941, 1)
 light_energy = 1.0
 spot_range = 10.3404
 spot_angle = 89.99
+
+[node name="cctv_pole" parent="." instance=ExtResource("4_ux0w4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.8159, 0, 7.25851)
+
+[node name="table" parent="." instance=ExtResource("5_qrglp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.88294, 0.000784039, -13.4175)
+
+[node name="Flashlight" parent="." instance=ExtResource("6_rfp72")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.08354, 0.775617, -12.9718)
 
 [editable path="guardhouse"]
