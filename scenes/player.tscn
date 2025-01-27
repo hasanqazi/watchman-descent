@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccejkq2fk2ey"]
+[gd_scene load_steps=10 format=3 uid="uid://ccejkq2fk2ey"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ccqpj"]
 [ext_resource type="Script" path="res://scripts/interact.gd" id="2_wl2v4"]
+[ext_resource type="Script" path="res://scripts/inventory.gd" id="3_ktmqa"]
 [ext_resource type="Script" path="res://scripts/interact_text.gd" id="3_kysu0"]
 [ext_resource type="Script" path="res://scripts/interact_sound.gd" id="4_f6jjm"]
 [ext_resource type="Texture2D" uid="uid://l1atief8dt6g" path="res://assets/texture/loading.png" id="4_qp7pp"]
@@ -29,6 +30,10 @@ target_position = Vector3(0, 2, 0)
 collision_mask = 2
 script = ExtResource("2_wl2v4")
 
+[node name="Inventory" type="Node3D" parent="Head"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.273453, -0.297816, -0.556113)
+script = ExtResource("3_ktmqa")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_5qahc")
@@ -52,13 +57,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -192.0
+offset_left = -320.0
 offset_top = 44.0
-offset_right = 192.0
-offset_bottom = 84.0
+offset_right = 320.0
+offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 script = ExtResource("3_kysu0")
 

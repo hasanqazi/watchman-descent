@@ -7,5 +7,9 @@ class_name Interactable
 @export var interact_sound: AudioStream
 @export var interact_text: String
 
+
 func display_interact_text() -> void:
 	SignalBus.interact_text.emit(interact_text)
+
+func interact(_player: CharacterBody3D) -> void:
+	SignalBus.play_interact_audio.emit(interact_sound)

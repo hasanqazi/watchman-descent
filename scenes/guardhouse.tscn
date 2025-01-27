@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsoagng253ngu"]
+[gd_scene load_steps=3 format=3 uid="uid://bsoagng253ngu"]
 
 [ext_resource type="PackedScene" uid="uid://00fj8vqsf40m" path="res://assets/models/guardhouse.glb" id="1_bv807"]
+[ext_resource type="PackedScene" uid="uid://73ycp031mooc" path="res://scenes/door.tscn" id="2_ew0xx"]
 
 [node name="guardhouse" instance=ExtResource("1_bv807")]
 
@@ -10,3 +11,6 @@ light_energy = 3.0
 light_volumetric_fog_energy = 5.0
 spot_range = 6.30222
 spot_angle = 53.3785
+
+[node name="door" parent="." index="5" instance=ExtResource("2_ew0xx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.84739, 0.299999, 4.49579)

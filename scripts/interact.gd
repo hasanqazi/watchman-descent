@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 				texture_progress.value = (1 - interact_timer / object.interact_cooldown) * 100
 				
 				if interact_timer <= 0:
-					object.interact()
+					object.interact(owner)
 					texture_progress.value = 0
 					texture_progress.visible = false
 			else:
@@ -35,3 +35,4 @@ func _process(delta: float) -> void:
 				texture_progress.visible = false
 	else:
 		SignalBus.interact_text.emit("")
+		texture_progress.value = 0

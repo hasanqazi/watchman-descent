@@ -8,6 +8,6 @@
 transform = Transform3D(1, 0, 0, 0, -0.928324, 0.371773, 0, -0.371773, -0.928324, 0, 5.89699, 0.696094)
 light_color = Color(0.607843, 0.92549, 0, 1)
 light_energy = 5.0
-light_volumetric_fog_energy = 16.0
+light_volumetric_fog_energy = 3.0
 spot_range = 10.7196
 spot_angle = 16.9285

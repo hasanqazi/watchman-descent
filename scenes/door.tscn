@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://73ycp031mooc"]
+
+[ext_resource type="PackedScene" uid="uid://c1hom8gdch064" path="res://assets/models/door.glb" id="1_ui84w"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="2_3ju13"]
+[ext_resource type="AudioStream" uid="uid://c2gf4lx7b2l68" path="res://assets/audio/door_open.wav" id="3_xsst4"]
+
+[node name="door" instance=ExtResource("1_ui84w")]
+script = ExtResource("2_3ju13")
+interactable_name = "Door"
+interact_cooldown = 0.5
+
+[node name="Frame" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0.746)
+
+[node name="StaticBody3D" parent="Frame/Door" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2"]
+stream = ExtResource("3_xsst4")

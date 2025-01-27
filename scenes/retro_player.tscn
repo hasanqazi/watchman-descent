@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2gih8qaec3d8"]
+
+[ext_resource type="Shader" path="res://shaders/bodycam.gdshader" id="1_6h6wc"]
+[ext_resource type="Shader" path="res://shaders/dithering.gdshader" id="1_8drvv"]
+[ext_resource type="PackedScene" uid="uid://ccejkq2fk2ey" path="res://scenes/player.tscn" id="2_j87rj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uq4tp"]
+shader = ExtResource("1_8drvv")
+shader_parameter/change_color_depth = true
+shader_parameter/target_color_depth = 4
+shader_parameter/dithering = true
+shader_parameter/scale_resolution = true
+shader_parameter/target_resolution_scale = 3
+shader_parameter/enable_recolor = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_no8ni"]
+shader = ExtResource("1_6h6wc")
+shader_parameter/width_scale = 1.02
+shader_parameter/height_scale = 0.6
+shader_parameter/distortion = 1.0
+shader_parameter/radius = 2.0
+shader_parameter/alpha = 1.0
+shader_parameter/crop = 0.943
+shader_parameter/crop_color = Color(0, 0, 0, 1)
+shader_parameter/crop_feathering = 0.1
+shader_parameter/channel_offset = 0.005
+shader_parameter/noise_strength = 1.0
+
+[node name="RetroPlayer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_uq4tp")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+audio_listener_enable_3d = true
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Bodycam" type="ColorRect" parent="SubViewportContainer/SubViewport"]
+material = SubResource("ShaderMaterial_no8ni")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_j87rj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19861, 0, 0.0239706)
+walking_speed = 3.0
+sprinting_speed = 5.0
