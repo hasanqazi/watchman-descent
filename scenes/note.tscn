@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnkb5acxy3s0t"]
+
+[ext_resource type="PackedScene" uid="uid://4gyvehytapv" path="res://assets/models/note.glb" id="1_ysp7c"]
+[ext_resource type="Script" path="res://scripts/note.gd" id="2_d0w5k"]
+[ext_resource type="Texture2D" uid="uid://gjxs1fdfg58e" path="res://assets/texture/notes_blood.png" id="3_4cfbx"]
+[ext_resource type="Texture2D" uid="uid://egwikg761g8v" path="res://assets/texture/notes_base.png" id="3_ek6lp"]
+
+[node name="note" node_paths=PackedStringArray("mesh_instance") instance=ExtResource("1_ysp7c")]
+script = ExtResource("2_d0w5k")
+textures = Array[Texture2D]([ExtResource("3_ek6lp"), ExtResource("3_4cfbx")])
+active_texture_index = 1
+mesh_instance = NodePath("Plane")
+interactable_name = "Note"
+interact_cooldown = 0.25
+interact_text = "Read"
+
+[node name="StaticBody3D" parent="Plane" index="0"]
+collision_layer = 2
+collision_mask = 2

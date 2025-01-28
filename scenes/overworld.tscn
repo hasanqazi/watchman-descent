@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://clgq07hc0fwx3"]
+[gd_scene load_steps=5 format=3 uid="uid://clgq07hc0fwx3"]
 
 [ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="1_vqljy"]
 [ext_resource type="PackedScene" uid="uid://bcpaay2w7bg8h" path="res://scenes/forest.tscn" id="3_20wmk"]
+[ext_resource type="PackedScene" uid="uid://bmbs820t00b8c" path="res://scenes/lamp_post.tscn" id="4_uc1g2"]
 [ext_resource type="PackedScene" uid="uid://1k4xls1mkqrb" path="res://scenes/main_maze.tscn" id="10_q6acv"]
 
 [node name="Overworld" type="Node3D"]
@@ -20,6 +21,9 @@ interact_text = "Exit"
 [node name="basement_door" parent="Forest" index="1" node_paths=PackedStringArray("destination")]
 destination = NodePath("../../MainMaze/basement_door/Destination")
 interact_text = "Enter"
+
+[node name="lamp_post" parent="." instance=ExtResource("4_uc1g2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.862776, -4.76837e-07, -22.6541)
 
 [editable path="MainMaze"]
 [editable path="MainMaze/maze_2"]

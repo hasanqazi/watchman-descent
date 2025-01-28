@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ctt068jj63b8v" path="res://assets/models/test_plane.glb" id="5_x4yrw"]
 [ext_resource type="PackedScene" uid="uid://bmbs820t00b8c" path="res://scenes/lamp_post.tscn" id="6_wf7v7"]
 [ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="7_2s8dw"]
-[ext_resource type="PackedScene" uid="uid://dnkb5acxy3s0t" path="res://scenes/note.tscn" id="8_nsrog"]
+[ext_resource type="PackedScene" uid="uid://dosrue8qyacdh" path="res://scenes/note.tscn" id="8_nsrog"]
 
 [node name="Prototype" type="Node3D"]
 
@@ -37,6 +37,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0287, 0, 5.96817)
 transform = Transform3D(1, 0, 0, 0, 0.986214, 0.165478, 0, -0.165478, 0.986214, -2.92139, 0.833387, -12.9153)
 
 [node name="note" parent="." instance=ExtResource("8_nsrog")]
-transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -4.4962, 0.822891, -12.6811)
+transform = Transform3D(-0.952523, 0, 0.304465, 0, 1, 0, -0.304465, 0, -0.952523, -4.60084, 0.777003, -12.6832)
 
 [editable path="guardhouse"]
