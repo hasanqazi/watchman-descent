@@ -38,5 +38,6 @@ transform = Transform3D(1, 0, 0, 0, 0.986214, 0.165478, 0, -0.165478, 0.986214, 
 
 [node name="note" parent="." instance=ExtResource("8_nsrog")]
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -4.4962, 0.822891, -12.6811)
+active_texture_index = 0
 
 [editable path="guardhouse"]

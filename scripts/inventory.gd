@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func update_items() -> void:
 	items = get_children()
-
+ 
 func _add_item_to_inv(item: Node3D) -> void:
 	print("Adding item: ", item)
 				   
@@ -24,6 +24,5 @@ func _input(_event: InputEvent) -> void:
 		activate_item()
 
 func activate_item() -> void:
-	for item in items:
-		if item.visible == true:
-			item.activate()
+	if !items.is_empty() and Global.player_immobile == false:
+		items[0].activate()

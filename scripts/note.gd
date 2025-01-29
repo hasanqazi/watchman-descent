@@ -20,16 +20,20 @@ func _ready() -> void:
 
 func interact(_player: CharacterBody3D) -> void:
 	super(_player)
+	Global.player_immobile = true
+	SignalBus.display_note.emit(textures[active_texture_index])
 
+
+# apply texture to the note
 func apply_texture(texture: Texture2D) -> void:
 	if mesh_instance and mesh_instance.mesh:
-		# Get the existing material or create a new StandardMaterial3D
+		
 		var material: StandardMaterial3D
 		if mesh_instance.get_surface_override_material(0) != null:
 			material = mesh_instance.get_surface_override_material(0)
 		else:
 			material = StandardMaterial3D.new()
 		
-		# Apply the texture
+		
 		material.albedo_texture = texture
 		mesh_instance.set_surface_override_material(0, material)

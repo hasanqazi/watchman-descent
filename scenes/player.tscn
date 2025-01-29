@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ccejkq2fk2ey"]
+[gd_scene load_steps=12 format=3 uid="uid://ccejkq2fk2ey"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ccqpj"]
 [ext_resource type="Script" path="res://scripts/interact.gd" id="2_wl2v4"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://scripts/interact_text.gd" id="3_kysu0"]
 [ext_resource type="Script" path="res://scripts/interact_sound.gd" id="4_f6jjm"]
 [ext_resource type="Texture2D" uid="uid://l1atief8dt6g" path="res://assets/texture/loading.png" id="4_qp7pp"]
+[ext_resource type="Script" path="res://scripts/notes_viewer.gd" id="4_tmdrh"]
+[ext_resource type="Texture2D" uid="uid://xtpp3d5rbmap" path="res://assets/texture/close.png" id="5_nrg6e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rocxm"]
 albedo_color = Color(0.596078, 0, 1, 1)
@@ -50,6 +52,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="NotesViewer" type="TextureRect" parent="Control"]
+z_index = 1
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -452.0
+offset_right = 320.0
+offset_bottom = 388.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+script = ExtResource("4_tmdrh")
+
+[node name="CloseButton" type="TextureButton" parent="Control/NotesViewer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = 24.0
+offset_right = 32.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_nrg6e")
+
 [node name="InteractText" type="RichTextLabel" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
@@ -87,3 +120,5 @@ texture_progress = ExtResource("4_qp7pp")
 
 [node name="InteractSound" type="AudioStreamPlayer" parent="."]
 script = ExtResource("4_f6jjm")
+
+[connection signal="pressed" from="Control/NotesViewer/CloseButton" to="Control/NotesViewer" method="_on_close_button_pressed"]
