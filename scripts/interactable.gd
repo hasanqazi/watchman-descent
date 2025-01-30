@@ -7,6 +7,8 @@ class_name Interactable
 @export var interact_sound: AudioStream
 @export var interact_text: String
 
+@export var equipped: bool = false 
+
 
 func display_interact_text() -> void:
 	SignalBus.interact_text.emit(interact_text)

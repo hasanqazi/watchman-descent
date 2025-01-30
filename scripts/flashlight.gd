@@ -1,27 +1,28 @@
 extends Interactable
 
-var interact_text_override: String = "Pickup [%s]" % Global.interact_bind
-
-@onready var spotlight: SpotLight3D = %SpotLight3D
-@onready var audio_stream: AudioStreamPlayer3D = $AudioStreamPlayer3D
-
+@export var interact_text_override: String = "Pickup [%s]" % Global.interact_bind
 @export var powered: bool = false
+
+@onready var spotlight: SpotLight3D = %FlashlightBulb
+@onready var audio_stream: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 func _ready() -> void:
 	interact_text = interact_text_override
-	spotlight.visible = false
+	spotlight.light_energy = 0
 
-func interact(_player: CharacterBody3D) -> void:
-	super(_player)
+func interact(player: CharacterBody3D) -> void:
+	super(player)
 	SignalBus.add_item_to_inv.emit(self)
 	#queue_free()
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("activate"):
+		activate()
+
 func activate() -> void:
-	if powered:
-		spotlight.visible = false
-		powered = false
-		audio_stream.play()
-	else:
-		spotlight.visible = true
-		powered = true
-		audio_stream.play()
+	if equipped == true and Global.player_immobile == false:
+		powered = !powered
+		spotlight.light_energy = 5.0 if powered else 0.0
+		
+		if audio_stream and audio_stream.stream:
+			audio_stream.play()

@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcpaay2w7bg8h"]
+[gd_scene load_steps=10 format=3 uid="uid://bcpaay2w7bg8h"]
 
 [ext_resource type="PackedScene" uid="uid://b4qnk4fdswfyr" path="res://assets/models/grass_2.glb" id="1_tpweb"]
 [ext_resource type="PackedScene" uid="uid://b75esojlycyay" path="res://scenes/basement_door.tscn" id="2_ggqgh"]
 [ext_resource type="PackedScene" uid="uid://orucsdsu1q06" path="res://assets/models/basement_door_cover.glb" id="3_fofvu"]
+[ext_resource type="PackedScene" uid="uid://bmbs820t00b8c" path="res://scenes/lamp_post.tscn" id="4_p0ak5"]
+[ext_resource type="PackedScene" uid="uid://dwlv45etpsdu7" path="res://assets/models/cabin.glb" id="5_s7bg8"]
+[ext_resource type="PackedScene" uid="uid://hx68sama22l3" path="res://assets/models/bed.glb" id="6_g4dis"]
+[ext_resource type="PackedScene" uid="uid://i6f3bnm3tq2p" path="res://assets/models/table.glb" id="7_qluds"]
+[ext_resource type="PackedScene" uid="uid://vdmexjshmacl" path="res://assets/models/night_stand.glb" id="8_7mkn6"]
+[ext_resource type="PackedScene" uid="uid://bkg2hh2rhufbh" path="res://scenes/flashlight.tscn" id="9_nb55u"]
 
 [node name="Forest" type="Node3D"]
 
@@ -13,3 +19,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.26149, 0, -18.3566)
 
 [node name="basement_door_cover" parent="." instance=ExtResource("3_fofvu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.21142, -9.53674e-07, -18.347)
+
+[node name="lamp_post" parent="." instance=ExtResource("4_p0ak5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.983807, 9.53674e-07, -29.3361)
+
+[node name="cabin" parent="." instance=ExtResource("5_s7bg8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.72248, -0.294846, -4.42228)
+
+[node name="bed" parent="." instance=ExtResource("6_g4dis")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.91327, 0.00515175, -0.700794)
+
+[node name="table" parent="." instance=ExtResource("7_qluds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4364, 0.00515223, -7.45049)
+
+[node name="night_stand" parent="." instance=ExtResource("8_7mkn6")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.9053, -0.0552797, -2.14658)
+
+[node name="flashlight" parent="." instance=ExtResource("9_nb55u")]
+transform = Transform3D(1, 0, 0, 0, 0.986214, 0.165478, 0, -0.165478, 0.986214, 10.7633, 0.837755, -6.97213)

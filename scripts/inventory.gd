@@ -17,12 +17,8 @@ func _add_item_to_inv(item: Node3D) -> void:
 	add_child(item)
 	item.global_position = global_position
 	item.global_rotation = global_rotation
+	
 	update_items()
-
-func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("activate"):
-		activate_item()
-
-func activate_item() -> void:
-	if !items.is_empty() and Global.player_immobile == false:
-		items[0].activate()
+	
+	if !items.is_empty():
+		items[0].equipped = true
