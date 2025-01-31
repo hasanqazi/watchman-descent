@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcpaay2w7bg8h"]
+[gd_scene load_steps=11 format=3 uid="uid://bcpaay2w7bg8h"]
 
 [ext_resource type="PackedScene" uid="uid://b4qnk4fdswfyr" path="res://assets/models/grass_2.glb" id="1_tpweb"]
 [ext_resource type="PackedScene" uid="uid://b75esojlycyay" path="res://scenes/basement_door.tscn" id="2_ggqgh"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://i6f3bnm3tq2p" path="res://assets/models/table.glb" id="7_qluds"]
 [ext_resource type="PackedScene" uid="uid://vdmexjshmacl" path="res://assets/models/night_stand.glb" id="8_7mkn6"]
 [ext_resource type="PackedScene" uid="uid://bkg2hh2rhufbh" path="res://scenes/flashlight.tscn" id="9_nb55u"]
+[ext_resource type="PackedScene" uid="uid://dnkb5acxy3s0t" path="res://scenes/note.tscn" id="10_10m67"]
 
 [node name="Forest" type="Node3D"]
 
@@ -37,3 +38,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.905
 
 [node name="flashlight" parent="." instance=ExtResource("9_nb55u")]
 transform = Transform3D(1, 0, 0, 0, 0.986214, 0.165478, 0, -0.165478, 0.986214, 10.7633, 0.837755, -6.97213)
+
+[node name="note" parent="." instance=ExtResource("10_10m67")]
+transform = Transform3D(-0.384199, 0, 0.92325, 0, 1, 0, -0.92325, 0, -0.384199, 10.7479, 0.783161, -8.23315)
