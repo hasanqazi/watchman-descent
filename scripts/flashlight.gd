@@ -15,7 +15,7 @@ func interact(player: CharacterBody3D) -> void:
 	SignalBus.add_item_to_inv.emit(self)
 	#queue_free()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("activate"):
 		activate()
 

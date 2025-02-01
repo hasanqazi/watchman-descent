@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dppss47l2d1sh"]
+
+[ext_resource type="PackedScene" uid="uid://2vlblueqrvux" path="res://assets/models/switch.glb" id="1_7dc1p"]
+[ext_resource type="Script" path="res://scripts/switch.gd" id="2_3fx1x"]
+[ext_resource type="AudioStream" uid="uid://cjookkerjjovu" path="res://assets/audio/mechanical.wav" id="3_gkccx"]
+
+[node name="switch" instance=ExtResource("1_7dc1p")]
+script = ExtResource("2_3fx1x")
+interactable_name = "Switch"
+interact_cooldown = 0.25
+interact_sound = ExtResource("3_gkccx")
+interact_text = "Turn On"
+
+[node name="Handle" parent="." index="2"]
+transform = Transform3D(0.998559, 0.0536624, 0, -0.0536624, 0.998559, 0, 0, 0, 1, 0.0776869, 0.00182255, 0)
+
+[node name="@StaticBody3D@46875" parent="." index="3"]
+collision_layer = 3
+collision_mask = 3

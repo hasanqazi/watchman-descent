@@ -12,7 +12,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_colliding():
 		var collider = get_collider()
-		if collider:
+		if collider and collider.owner.interactable == true:
 			var object = get_collider().owner
 			object.display_interact_text()
 		
