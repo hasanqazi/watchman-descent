@@ -28,6 +28,9 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	if Global.player_immobile == true:
+		return
+	
 	if Input.is_action_pressed("sprint"):
 		current_speed = sprinting_speed
 	else:

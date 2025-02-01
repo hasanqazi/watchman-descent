@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4bx3xevuw81m"]
+
+[ext_resource type="PackedScene" uid="uid://cut4pcl6gmeyj" path="res://assets/models/door_2.glb" id="1_f1wvi"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="2_y182q"]
+[ext_resource type="AudioStream" uid="uid://c2gf4lx7b2l68" path="res://assets/audio/door_open.wav" id="3_i5yis"]
+
+[node name="door_2" instance=ExtResource("1_f1wvi")]
+script = ExtResource("2_y182q")
+interactable_name = "Door Cabin"
+interact_cooldown = 0.5
+
+[node name="Door" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 1.25, 0)
+
+[node name="DoorCol" parent="Door" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2"]
+stream = ExtResource("3_i5yis")

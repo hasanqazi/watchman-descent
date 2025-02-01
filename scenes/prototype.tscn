@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://035xh7ircirs"]
+[gd_scene load_steps=9 format=3 uid="uid://035xh7ircirs"]
 
 [ext_resource type="PackedScene" uid="uid://bsoagng253ngu" path="res://scenes/guardhouse.tscn" id="1_675l3"]
 [ext_resource type="PackedScene" uid="uid://b0e304ng4h18u" path="res://scenes/cctv_pole.tscn" id="2_aj4p5"]
@@ -9,33 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="7_2s8dw"]
 [ext_resource type="PackedScene" uid="uid://dnkb5acxy3s0t" path="res://scenes/note.tscn" id="8_nsrog"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sl3wt"]
-sky_top_color = Color(0, 0.361217, 0.376538, 1)
-sky_horizon_color = Color(0.127925, 0.253779, 0.268273, 1)
-ground_bottom_color = Color(0.129412, 0.254902, 0.266667, 1)
-ground_horizon_color = Color(0.129412, 0.254902, 0.266667, 1)
-energy_multiplier = 0.4
-
-[sub_resource type="Sky" id="Sky_oqk6k"]
-sky_material = SubResource("ProceduralSkyMaterial_sl3wt")
-
-[sub_resource type="Environment" id="Environment_h36wv"]
-background_mode = 2
-sky = SubResource("Sky_oqk6k")
-tonemap_mode = 3
-sdfgi_use_occlusion = true
-glow_enabled = true
-fog_light_color = Color(0.0366112, 0.230496, 0.248039, 1)
-volumetric_fog_enabled = true
-volumetric_fog_emission = Color(0, 0.197693, 0.207226, 1)
-
 [node name="Prototype" type="Node3D"]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-visible = false
-light_energy = 0.3
-shadow_enabled = true
 
 [node name="guardhouse" parent="." instance=ExtResource("1_675l3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0902703, -0.299215, -9.04907)
@@ -65,8 +39,5 @@ transform = Transform3D(1, 0, 0, 0, 0.986214, 0.165478, 0, -0.165478, 0.986214, 
 [node name="note" parent="." instance=ExtResource("8_nsrog")]
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -4.4962, 0.822891, -12.6811)
 active_texture_index = 0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_h36wv")
 
 [editable path="guardhouse"]

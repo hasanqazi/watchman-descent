@@ -16,14 +16,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.8861, 0)
 destination = NodePath("../../Forest/basement_door/Destination")
 interact_text = "Exit"
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_8semd")
+
 [node name="Forest" parent="." instance=ExtResource("3_20wmk")]
 
 [node name="basement_door" parent="Forest" index="1" node_paths=PackedStringArray("destination")]
 destination = NodePath("../../MainMaze/basement_door/Destination")
-interact_text = "Enter"
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("4_8semd")
 
 [editable path="MainMaze"]
 [editable path="MainMaze/maze_2"]
