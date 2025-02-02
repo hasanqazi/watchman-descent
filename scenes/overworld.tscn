@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://clgq07hc0fwx3"]
 
-[ext_resource type="Script" path="res://scenes/overworld.gd" id="1_tyxf3"]
+[ext_resource type="Script" path="res://scripts/overworld.gd" id="1_tyxf3"]
 [ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="1_vqljy"]
 [ext_resource type="PackedScene" uid="uid://bcpaay2w7bg8h" path="res://scenes/forest.tscn" id="3_20wmk"]
 [ext_resource type="Environment" uid="uid://dppc7nerc7sv" path="res://resources/maze.tres" id="5_ok4uy"]

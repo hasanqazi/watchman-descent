@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://035xh7ircirs"]
+[gd_scene load_steps=11 format=3 uid="uid://035xh7ircirs"]
 
 [ext_resource type="PackedScene" uid="uid://bsoagng253ngu" path="res://scenes/guardhouse.tscn" id="1_675l3"]
 [ext_resource type="PackedScene" uid="uid://b0e304ng4h18u" path="res://scenes/cctv_pole.tscn" id="2_aj4p5"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="7_2s8dw"]
 [ext_resource type="PackedScene" uid="uid://dnkb5acxy3s0t" path="res://scenes/note.tscn" id="8_nsrog"]
 [ext_resource type="PackedScene" uid="uid://dppss47l2d1sh" path="res://scenes/switch.tscn" id="9_00gdb"]
+[ext_resource type="PackedScene" uid="uid://b75esojlycyay" path="res://scenes/basement_door.tscn" id="10_jcnhu"]
 
 [node name="Prototype" type="Node3D"]
 
@@ -43,5 +44,11 @@ active_texture_index = 0
 
 [node name="switch" parent="." instance=ExtResource("9_00gdb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.523819, 1.03555, -3.08226)
+
+[node name="basement_door" parent="." instance=ExtResource("10_jcnhu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.76212, 0, 0.338978)
+locked = true
+locked_text = "Turn on power"
+interact_text = "Enter"
 
 [editable path="guardhouse"]
