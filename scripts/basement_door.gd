@@ -1,6 +1,7 @@
 extends Interactable
 
 @export var destination: Marker3D
+@export var level: Global.Levels
 
 var interact_text_override: String
 
@@ -10,5 +11,7 @@ func _ready() -> void:
 
 func interact(_player: CharacterBody3D) -> void:
 	super(_player)
+	
+	SignalBus.changed_level.emit(level)
 	_player.global_position = destination.global_position
 	_player.global_rotation = destination.global_rotation

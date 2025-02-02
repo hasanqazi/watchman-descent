@@ -22,7 +22,7 @@ func _process(_delta: float) -> void:
 func activate() -> void:
 	if equipped == true and Global.player_immobile == false:
 		powered = !powered
-		spotlight.light_energy = 5.0 if powered else 0.0
+		spotlight.light_energy = 3.0 if powered else 0.0
 		
 		if audio_stream and audio_stream.stream:
 			audio_stream.play()

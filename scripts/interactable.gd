@@ -14,5 +14,5 @@ func display_interact_text() -> void:
 	SignalBus.interact_text.emit(interact_text)
 
 func interact(_player: CharacterBody3D) -> void:
-	print("Played ", interact_sound)
+	print("Played %s sound" % interactable_name)
 	SignalBus.play_interact_audio.emit(interact_sound)

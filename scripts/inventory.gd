@@ -1,6 +1,6 @@
 extends Node3D
 
-var items = []
+var items: Array[Node] = []
 
 func _ready() -> void:
 	SignalBus.add_item_to_inv.connect(_add_item_to_inv)

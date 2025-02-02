@@ -3,19 +3,19 @@ extends CharacterBody3D
 @onready var head: Node3D = %Head
 
 
-var current_speed = 5.0
+var current_speed: float = 5.0
 
-@export var walking_speed = 5.0
-@export var sprinting_speed = 8.0
+@export var walking_speed: float = 5.0
+@export var sprinting_speed: float = 8.0
 
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY: float = 4.5
 
 @export var mouse_sensitivity: float = 0.08
 @export var head_clamp: int = 79
 
 var lerp_speed: float = 10.0
 
-var direction = Vector3.ZERO
+var direction: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

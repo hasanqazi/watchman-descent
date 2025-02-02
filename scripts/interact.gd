@@ -11,9 +11,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if is_colliding():
-		var collider = get_collider()
+		var collider: StaticBody3D = get_collider()
 		if collider and collider.owner.interactable == true:
-			var object = get_collider().owner
+			var object: Interactable = get_collider().owner
 			object.display_interact_text()
 		
 			if Input.is_action_pressed("interact"):

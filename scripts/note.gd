@@ -19,9 +19,10 @@ func _ready() -> void:
 		apply_texture(textures[active_texture_index])
 
 func interact(_player: CharacterBody3D) -> void:
-	super(_player)
-	Global.player_immobile = true
-	SignalBus.display_note.emit(textures[active_texture_index])
+	if Global.player_immobile == false:
+		super(_player)
+		Global.player_immobile = true
+		SignalBus.display_note.emit(textures[active_texture_index])
 
 
 # apply texture to the note
