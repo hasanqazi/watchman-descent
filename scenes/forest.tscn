@@ -23,6 +23,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.26149, 0, -18.3566)
 [node name="basement_door_cover" parent="." instance=ExtResource("3_fofvu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.21142, -9.53674e-07, -18.347)
 
+[node name="basement_door2" parent="." instance=ExtResource("2_ggqgh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.4879, 0, -23.1827)
+
+[node name="basement_door_cover2" parent="." instance=ExtResource("3_fofvu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.4378, -9.53674e-07, -23.1923)
+
 [node name="lamp_post" parent="." instance=ExtResource("4_p0ak5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.983807, 9.53674e-07, -29.3361)
 

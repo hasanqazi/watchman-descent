@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/overworld.gd" id="1_tyxf3"]
 [ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="1_vqljy"]
 [ext_resource type="PackedScene" uid="uid://bcpaay2w7bg8h" path="res://scenes/forest.tscn" id="3_20wmk"]
-[ext_resource type="Environment" uid="uid://dcd4m1st6lalx" path="res://resources/mirror.tres" id="5_8s62l"]
+[ext_resource type="Environment" uid="uid://bn2ohft3vj10p" path="res://resources/forest.tres" id="5_dtuhd"]
 [ext_resource type="AudioStream" uid="uid://bfk4exbg8h15v" path="res://resources/forest_ambience.tres" id="6_r6lib"]
 [ext_resource type="PackedScene" uid="uid://1k4xls1mkqrb" path="res://scenes/main_maze.tscn" id="10_q6acv"]
 
@@ -20,7 +20,7 @@ destination = NodePath("../../Forest/basement_door/Destination")
 interact_text = "Exit"
 
 [node name="basement_door2" parent="MainMaze" index="4" node_paths=PackedStringArray("destination")]
-destination = NodePath("../../Forest/basement_door/Destination")
+destination = NodePath("../../Forest/basement_door2/Destination")
 level = 2
 locked = true
 locked_text = "I need to turn on the power first"
@@ -33,8 +33,12 @@ destination = NodePath("../../MainMaze/basement_door/Destination")
 level = 1
 interact_text = "Enter"
 
+[node name="basement_door2" parent="Forest" index="3"]
+locked = true
+locked_text = "This door is locked from inside"
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("5_8s62l")
+environment = ExtResource("5_dtuhd")
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_r6lib")
@@ -46,3 +50,4 @@ autoplay = true
 [editable path="MainMaze/basement_door"]
 [editable path="Forest"]
 [editable path="Forest/basement_door"]
+[editable path="Forest/basement_door2"]

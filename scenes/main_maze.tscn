@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://1k4xls1mkqrb"]
+[gd_scene load_steps=12 format=3 uid="uid://1k4xls1mkqrb"]
 
 [ext_resource type="PackedScene" uid="uid://dr6eqs0we53ub" path="res://assets/models/maze_2.glb" id="1_qsk7a"]
 [ext_resource type="PackedScene" uid="uid://b75esojlycyay" path="res://scenes/basement_door.tscn" id="2_kk2hu"]
 [ext_resource type="PackedScene" uid="uid://bktx6ufb7kfpc" path="res://scenes/human_1.tscn" id="3_1ibfu"]
 [ext_resource type="PackedScene" uid="uid://dhmuayy471gs0" path="res://scenes/human_2.tscn" id="4_rbb0d"]
 [ext_resource type="PackedScene" uid="uid://dppss47l2d1sh" path="res://scenes/switch.tscn" id="5_a1hgl"]
+[ext_resource type="PackedScene" uid="uid://dp110u64rhh28" path="res://assets/models/rack.glb" id="6_d804d"]
+[ext_resource type="PackedScene" uid="uid://d3mbgj72hcc4b" path="res://assets/models/barrell.glb" id="7_m2or3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvy4v"]
 albedo_color = Color(0, 1, 0, 1)
@@ -67,5 +69,17 @@ mesh = SubResource("SphereMesh_y2q18")
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.23474, 0, -14.9847)
 mesh = SubResource("SphereMesh_y2q18")
+
+[node name="rack" parent="." instance=ExtResource("6_d804d")]
+transform = Transform3D(0.156917, 0, -0.987612, 0, 1, 0, 0.987612, 0, 0.156917, -5.55222, 1.19209e-07, -28.9189)
+
+[node name="barrell" parent="." instance=ExtResource("7_m2or3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4563, 0, -29.5935)
+
+[node name="barrell2" parent="." instance=ExtResource("7_m2or3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5543, -1.19209e-07, -28.4238)
+
+[node name="barrell3" parent="." instance=ExtResource("7_m2or3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2787, -1.19209e-07, -29.3765)
 
 [editable path="maze_2"]

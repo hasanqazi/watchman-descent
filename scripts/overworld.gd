@@ -24,8 +24,10 @@ func changed_level(level: Global.Levels) -> void:
 		Global.Levels.FOREST:
 			world_environment.environment = forest_env
 			world_ambience.stream = forest_ambience
+			world_ambience.play()
 		Global.Levels.MAZE:
 			world_environment.environment = maze_env
+			world_ambience.stream = null
 		Global.Levels.MIRROR:
 			world_environment.environment = mirror_env
 	
