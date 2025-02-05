@@ -9,17 +9,24 @@ var interact_text_override: String
 
 func _ready() -> void:
 	interact_text_override = "{0} [{1}]".format([interact_text, Global.interact_bind])
-	interact_text = update_interact_text(locked)
+	interact_text = update_interact_text()
+	
+	SignalBus.unlock_door.connect(unlock_door)
 
 func interact(_player: CharacterBody3D) -> void:
-	super(_player)
-	
-	SignalBus.changed_level.emit(level)
-	_player.global_position = destination.global_position
-	_player.global_rotation = destination.global_rotation
+	if locked == false:
+		super(_player)
+		
+		SignalBus.changed_level.emit(level)
+		_player.global_position = destination.global_position
+		_player.global_rotation = destination.global_rotation
 
-func update_interact_text(locked: bool) -> String:
+func update_interact_text() -> String:
 	if locked:
 		return locked_text
 	else:
 		return interact_text_override
+
+func unlock_door() -> void:
+	locked = false
+	interact_text = update_interact_text()

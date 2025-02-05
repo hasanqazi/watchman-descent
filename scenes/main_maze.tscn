@@ -1,9 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://1k4xls1mkqrb"]
+[gd_scene load_steps=10 format=3 uid="uid://1k4xls1mkqrb"]
 
 [ext_resource type="PackedScene" uid="uid://dr6eqs0we53ub" path="res://assets/models/maze_2.glb" id="1_qsk7a"]
 [ext_resource type="PackedScene" uid="uid://b75esojlycyay" path="res://scenes/basement_door.tscn" id="2_kk2hu"]
 [ext_resource type="PackedScene" uid="uid://bktx6ufb7kfpc" path="res://scenes/human_1.tscn" id="3_1ibfu"]
 [ext_resource type="PackedScene" uid="uid://dhmuayy471gs0" path="res://scenes/human_2.tscn" id="4_rbb0d"]
+[ext_resource type="PackedScene" uid="uid://dppss47l2d1sh" path="res://scenes/switch.tscn" id="5_a1hgl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvy4v"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_kuuxh"]
+material = SubResource("StandardMaterial3D_rvy4v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brsdc"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_y2q18"]
+material = SubResource("StandardMaterial3D_brsdc")
 
 [node name="MainMaze" type="Node3D"]
 
@@ -20,5 +33,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.04895, 0, 2)
 
 [node name="basement_door2" parent="." instance=ExtResource("2_kk2hu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8263, 0, -2.07145)
+
+[node name="switch" parent="." instance=ExtResource("5_a1hgl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -30.7326, 1, -32)
+
+[node name="switch2" parent="." instance=ExtResource("5_a1hgl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 1, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5621, 0, -20.1799)
+mesh = SubResource("SphereMesh_kuuxh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6355, 0, 1.8474)
+mesh = SubResource("SphereMesh_kuuxh")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70768, 0, 1.8474)
+mesh = SubResource("SphereMesh_kuuxh")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9687, 0, -21.5537)
+mesh = SubResource("SphereMesh_kuuxh")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9867, 0, -34.0097)
+mesh = SubResource("SphereMesh_y2q18")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.434, 0, -24.9959)
+mesh = SubResource("SphereMesh_y2q18")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.23474, 0, -14.9847)
+mesh = SubResource("SphereMesh_y2q18")
 
 [editable path="maze_2"]

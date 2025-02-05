@@ -6,10 +6,14 @@ extends Interactable
 
 func interact(player: CharacterBody3D) -> void:
 	super(player)
+	
 	switched = true
 	interact_text = ""
 	SignalBus.interact_text.emit(interact_text)
 	interactable = false
+	
+	SignalBus.lever_switched.emit()
+	
 	anim_player.play("Switched")
 	print(player, "turned on a switch")
 	

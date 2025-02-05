@@ -7,7 +7,7 @@ var interact_bind: String = InputMap.action_get_events("interact")[0].as_text().
 enum Levels {
 	FOREST,
 	MAZE,
-	RED_FOREST
+	MIRROR
 }
 
 func center_string(text: String) -> String:
