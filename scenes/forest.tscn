@@ -4,14 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://b75esojlycyay" path="res://scenes/basement_door.tscn" id="2_ggqgh"]
 [ext_resource type="PackedScene" uid="uid://orucsdsu1q06" path="res://assets/models/basement_door_cover.glb" id="3_fofvu"]
 [ext_resource type="PackedScene" uid="uid://bmbs820t00b8c" path="res://scenes/lamp_post.tscn" id="4_p0ak5"]
-[ext_resource type="PackedScene" uid="uid://dwlv45etpsdu7" path="res://assets/models/cabin.glb" id="5_s7bg8"]
 [ext_resource type="PackedScene" uid="uid://hx68sama22l3" path="res://assets/models/bed.glb" id="6_g4dis"]
 [ext_resource type="PackedScene" uid="uid://i6f3bnm3tq2p" path="res://assets/models/table.glb" id="7_qluds"]
 [ext_resource type="PackedScene" uid="uid://vdmexjshmacl" path="res://assets/models/night_stand.glb" id="8_7mkn6"]
 [ext_resource type="PackedScene" uid="uid://bkg2hh2rhufbh" path="res://scenes/flashlight.tscn" id="9_nb55u"]
 [ext_resource type="PackedScene" uid="uid://dnkb5acxy3s0t" path="res://scenes/note.tscn" id="10_10m67"]
-[ext_resource type="PackedScene" uid="uid://b4bx3xevuw81m" path="res://scenes/door_2.tscn" id="11_07uav"]
 [ext_resource type="PackedScene" uid="uid://bflutwryf6nrp" path="res://scenes/tree_douglas.tscn" id="12_cpw6v"]
+[ext_resource type="PackedScene" uid="uid://c5sk0j84shlje" path="res://scenes/cabin.tscn" id="12_tcemw"]
+[ext_resource type="PackedScene" uid="uid://bheum47y5mtiv" path="res://scenes/artwork.tscn" id="12_uw5u8"]
 
 [node name="Forest" type="Node3D"]
 
@@ -30,10 +30,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.48
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.4378, -9.53674e-07, -23.1923)
 
 [node name="lamp_post" parent="." instance=ExtResource("4_p0ak5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.983807, 9.53674e-07, -29.3361)
-
-[node name="cabin" parent="." instance=ExtResource("5_s7bg8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.72248, -0.294846, -4.42228)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9797, 9.53674e-07, -3.57248)
 
 [node name="bed" parent="." instance=ExtResource("6_g4dis")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.91327, 0.00515175, -0.700794)
@@ -49,9 +46,6 @@ transform = Transform3D(1, 0, 0, 0, 0.986214, 0.165478, 0, -0.165478, 0.986214, 
 
 [node name="note" parent="." instance=ExtResource("10_10m67")]
 transform = Transform3D(-0.384199, 0, 0.92325, 0, 1, 0, -0.92325, 0, -0.384199, 10.7479, 0.783161, -8.23315)
-
-[node name="door_2" parent="." instance=ExtResource("11_07uav")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.9032, 0.00481129, -4.42466)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -894,3 +888,9 @@ transform = Transform3D(0.989483, 0, 0.14465, 0, 1, 0, -0.14465, 0, 0.989483, -2
 
 [node name="tree_douglas170" parent="Trees" instance=ExtResource("12_cpw6v")]
 transform = Transform3D(0.989483, 0, 0.14465, 0, 1, 0, -0.14465, 0, 0.989483, 1.45316, 0, 17.8266)
+
+[node name="cabin" parent="." instance=ExtResource("12_tcemw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.72248, -0.294846, -4.42228)
+
+[node name="artwork" parent="." instance=ExtResource("12_uw5u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29085, 1.40662, -9.11098)

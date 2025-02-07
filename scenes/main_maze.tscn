@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://1k4xls1mkqrb"]
+[gd_scene load_steps=14 format=3 uid="uid://1k4xls1mkqrb"]
 
 [ext_resource type="PackedScene" uid="uid://dr6eqs0we53ub" path="res://assets/models/maze_2.glb" id="1_qsk7a"]
 [ext_resource type="PackedScene" uid="uid://b75esojlycyay" path="res://scenes/basement_door.tscn" id="2_kk2hu"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dppss47l2d1sh" path="res://scenes/switch.tscn" id="5_a1hgl"]
 [ext_resource type="PackedScene" uid="uid://dp110u64rhh28" path="res://assets/models/rack.glb" id="6_d804d"]
 [ext_resource type="PackedScene" uid="uid://d3mbgj72hcc4b" path="res://assets/models/barrell.glb" id="7_m2or3"]
+[ext_resource type="Texture2D" uid="uid://blkkb48g4so0r" path="res://assets/texture/graffiti.png" id="8_ibo22"]
+[ext_resource type="PackedScene" uid="uid://bjh0f48tb4tac" path="res://assets/models/box.glb" id="9_g8n31"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvy4v"]
 albedo_color = Color(0, 1, 0, 1)
@@ -81,5 +83,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5543, -1.19209e-07, -28.4
 
 [node name="barrell3" parent="." instance=ExtResource("7_m2or3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2787, -1.19209e-07, -29.3765)
+
+[node name="Graffiti" type="Decal" parent="."]
+transform = Transform3D(-0.979904, 8.71913e-09, -0.19947, 0.19947, 4.2833e-08, -0.979904, -5.55006e-17, -1, -4.37114e-08, 6.76499, 1.43229, 3.89798)
+size = Vector3(2.8949, 0.747192, 2)
+texture_albedo = ExtResource("8_ibo22")
+
+[node name="box" parent="." instance=ExtResource("9_g8n31")]
+transform = Transform3D(0.979473, 0, -0.201574, 0, 1, 0, 0.201574, 0, 0.979473, 0.868496, 0, -1.00346)
 
 [editable path="maze_2"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bheum47y5mtiv"]
+
+[ext_resource type="PackedScene" uid="uid://dopcgqhtqmju3" path="res://assets/models/artwork.glb" id="1_jdtj8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyrwy"]
+resource_name = "Glass"
+transparency = 1
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.0745098)
+metallic = 0.8
+roughness = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ov5o2"]
+_surfaces = [{
+"aabb": AABB(-0.363508, 0.0364918, 0.0513957, 0.727016, 0.727016, 1e-05),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(2, 0, 1, 0, 0, 0, 2, 0, 3, 0, 1, 0),
+"name": "Glass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kewo3"]
+resource_name = "artwork_Cube_002"
+_surfaces = [{
+"aabb": AABB(-0.363508, 0.0364918, 0.0513957, 0.727016, 0.727016, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(2, 0, 1, 0, 0, 0, 2, 0, 3, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_gyrwy"),
+"name": "Glass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ov5o2")
+
+[node name="artwork" instance=ExtResource("1_jdtj8")]
+
+[node name="Glass" parent="." index="1"]
+mesh = SubResource("ArrayMesh_kewo3")

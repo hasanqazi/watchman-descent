@@ -16,7 +16,7 @@ uniform float channel_offset : hint_range(-0.1, 0.1, 0.001) = 0.005;
 uniform float noise_strength : hint_range(0.0, 10.0, 0.1) = 5.0;
 
 vec2 distort(vec2 p) {
-    float d = length(p);  
+    float d = length(p);
     float z = sqrt(distortion + d * d * -distortion);
     float r = atan(d, z) / 3.1415926535;
     float phi = atan(p.y, p.x);
@@ -24,7 +24,7 @@ vec2 distort(vec2 p) {
 }
 
 void fragment() {
-    vec2 xy = (SCREEN_UV * 2.0 - 1.0);  
+    vec2 xy = (SCREEN_UV * 2.0 - 1.0);
     xy = vec2(xy.x * width_scale, xy.y * height_scale);
     float d = length(xy);
     vec4 tex;
