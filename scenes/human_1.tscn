@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bktx6ufb7kfpc"]
+[gd_scene load_steps=5 format=3 uid="uid://bktx6ufb7kfpc"]
 
 [ext_resource type="PackedScene" uid="uid://bind7yolnri1p" path="res://assets/models/human_1.glb" id="1_htxbf"]
+[ext_resource type="Shader" path="res://shaders/censor.gdshader" id="2_5pxxe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_57k7t"]
+render_priority = 0
+shader = ExtResource("2_5pxxe")
+shader_parameter/pixelation = 0.01
+shader_parameter/opacity = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_osgdw"]
+material = SubResource("ShaderMaterial_57k7t")
 
 [node name="human_1" instance=ExtResource("1_htxbf")]
 
@@ -236,3 +246,7 @@ bones/146/rotation = Quaternion(0.00313213, -0.0919455, 0.189411, 0.977578)
 bones/168/rotation = Quaternion(0.00313522, -0.0919644, 0.189411, 0.977577)
 bones/216/rotation = Quaternion(0.715968, 0.667185, -0.140139, -0.150386)
 bones/218/rotation = Quaternion(0.715968, 0.667185, -0.140139, 0.150386)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="84"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.789957, 1.0561, -0.164978)
+mesh = SubResource("SphereMesh_osgdw")

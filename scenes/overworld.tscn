@@ -26,6 +26,9 @@ locked = true
 locked_text = "I need to turn on the power first"
 interact_text = "Exit"
 
+[node name="box" parent="MainMaze" index="19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
 [node name="Forest" parent="." instance=ExtResource("3_20wmk")]
 
 [node name="basement_door" parent="Forest" index="1" node_paths=PackedStringArray("destination")]
