@@ -10,5 +10,7 @@ enum Levels {
 	MIRROR
 }
 
+var current_level: Levels
+
 func center_string(text: String) -> String:
 	return "[center]%s[/center]" % text

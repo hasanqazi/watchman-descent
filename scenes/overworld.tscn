@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://clgq07hc0fwx3"]
+[gd_scene load_steps=8 format=3 uid="uid://clgq07hc0fwx3"]
 
 [ext_resource type="Script" path="res://scripts/overworld.gd" id="1_tyxf3"]
 [ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="1_vqljy"]
 [ext_resource type="PackedScene" uid="uid://bcpaay2w7bg8h" path="res://scenes/forest.tscn" id="3_20wmk"]
 [ext_resource type="Environment" uid="uid://bn2ohft3vj10p" path="res://resources/forest.tres" id="5_dtuhd"]
 [ext_resource type="AudioStream" uid="uid://bfk4exbg8h15v" path="res://resources/forest_ambience.tres" id="6_r6lib"]
+[ext_resource type="PackedScene" uid="uid://cjmyndem6ev6r" path="res://scenes/enemy_manager.tscn" id="7_hwdhb"]
 [ext_resource type="PackedScene" uid="uid://1k4xls1mkqrb" path="res://scenes/main_maze.tscn" id="10_q6acv"]
 
 [node name="Overworld" type="Node3D"]
@@ -15,30 +16,36 @@ script = ExtResource("1_tyxf3")
 [node name="MainMaze" parent="." instance=ExtResource("10_q6acv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.8861, 0)
 
-[node name="basement_door" parent="MainMaze" index="1" node_paths=PackedStringArray("destination")]
-destination = NodePath("../../Forest/basement_door/Destination")
+[node name="Ceiling" parent="MainMaze/NavigationRegion3D/maze_2" index="2"]
+visible = true
+
+[node name="NoLight" parent="MainMaze/NavigationRegion3D/maze_2" index="3"]
+visible = true
+
+[node name="basement_door" parent="MainMaze/NavigationRegion3D" index="1" node_paths=PackedStringArray("destination")]
+destination = NodePath("../../../Forest/basement_door/Destination")
 interact_text = "Exit"
 
-[node name="basement_door2" parent="MainMaze" index="4" node_paths=PackedStringArray("destination")]
-destination = NodePath("../../Forest/basement_door2/Destination")
+[node name="basement_door2" parent="MainMaze/NavigationRegion3D" index="4" node_paths=PackedStringArray("destination")]
+destination = NodePath("../../../Forest/basement_door2/Destination")
 level = 2
 locked = true
-locked_text = "I need to turn on the power first"
+locked_text = "I need to turn on the electricity first..."
 interact_text = "Exit"
-
-[node name="box" parent="MainMaze" index="19"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Forest" parent="." instance=ExtResource("3_20wmk")]
 
 [node name="basement_door" parent="Forest" index="1" node_paths=PackedStringArray("destination")]
-destination = NodePath("../../MainMaze/basement_door/Destination")
+destination = NodePath("../../MainMaze/NavigationRegion3D/basement_door/Destination")
 level = 1
 interact_text = "Enter"
 
 [node name="basement_door2" parent="Forest" index="3"]
 locked = true
 locked_text = "This door is locked from inside"
+
+[node name="EnemyManager" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_hwdhb")]
+player = NodePath("../RetroPlayer/SubViewportContainer/SubViewport/Player")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("5_dtuhd")
@@ -48,9 +55,11 @@ stream = ExtResource("6_r6lib")
 volume_db = -15.0
 autoplay = true
 
+[editable path="RetroPlayer"]
 [editable path="MainMaze"]
-[editable path="MainMaze/maze_2"]
-[editable path="MainMaze/basement_door"]
+[editable path="MainMaze/NavigationRegion3D/maze_2"]
+[editable path="MainMaze/NavigationRegion3D/basement_door"]
+[editable path="MainMaze/NavigationRegion3D/basement_door2"]
 [editable path="Forest"]
 [editable path="Forest/basement_door"]
 [editable path="Forest/basement_door2"]

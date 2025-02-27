@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3ph8l2hkyuo7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llxa7"]
+albedo_color = Color(1, 0.619608, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_n06nt"]
+material = SubResource("StandardMaterial3D_llxa7")
+
+[node name="SpawnPoint" type="Marker3D" groups=["spawn_point"]]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_n06nt")

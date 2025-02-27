@@ -20,6 +20,8 @@ func _ready() -> void:
 	world_environment.environment = forest_env
 
 func changed_level(level: Global.Levels) -> void:
+	Global.current_level = level
+	
 	match level:
 		Global.Levels.FOREST:
 			world_environment.environment = forest_env
