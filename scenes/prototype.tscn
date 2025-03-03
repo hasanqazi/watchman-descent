@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://035xh7ircirs"]
+[gd_scene load_steps=12 format=3 uid="uid://035xh7ircirs"]
 
 [ext_resource type="PackedScene" uid="uid://bsoagng253ngu" path="res://scenes/guardhouse.tscn" id="1_675l3"]
 [ext_resource type="PackedScene" uid="uid://b0e304ng4h18u" path="res://scenes/cctv_pole.tscn" id="2_aj4p5"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dnkb5acxy3s0t" path="res://scenes/note.tscn" id="8_nsrog"]
 [ext_resource type="PackedScene" uid="uid://dppss47l2d1sh" path="res://scenes/switch.tscn" id="9_00gdb"]
 [ext_resource type="PackedScene" uid="uid://b75esojlycyay" path="res://scenes/basement_door.tscn" id="10_jcnhu"]
+[ext_resource type="PackedScene" uid="uid://bpi2fetqknkoa" path="res://scenes/mirror_enemy.tscn" id="11_bliai"]
 
 [node name="Prototype" type="Node3D"]
 
@@ -50,5 +51,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.762
 locked = true
 locked_text = "Turn on power"
 interact_text = "Enter"
+
+[node name="MirrorEnemy" parent="." instance=ExtResource("11_bliai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48897, 0, 12.8654)
+radius = 10.0
 
 [editable path="guardhouse"]
