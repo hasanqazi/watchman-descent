@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://d167xck11aqi7"]
+
+[ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="1_bfynw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6rply"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_pgg6x"]
+sky_material = SubResource("ProceduralSkyMaterial_6rply")
+
+[sub_resource type="Environment" id="Environment_8fm5t"]
+background_mode = 2
+sky = SubResource("Sky_pgg6x")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="NewForest" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8fm5t")
+
+[node name="RetroPlayer" parent="." instance=ExtResource("1_bfynw")]
