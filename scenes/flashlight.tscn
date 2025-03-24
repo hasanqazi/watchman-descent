@@ -34,5 +34,14 @@ spot_range = 12.9401
 spot_attenuation = 0.5
 spot_angle = 20.0
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+[node name="AmbientBulb" type="SpotLight3D" parent="." index="3"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0.182676)
+light_color = Color(0.976471, 0.933333, 0.839216, 1)
+light_energy = 0.2
+spot_range = 64.449
+spot_attenuation = 0.5
+spot_angle = 44.4077
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4"]
 stream = ExtResource("4_axku0")

@@ -99,6 +99,5 @@ func teleport_sprite() -> void:
 func _on_timer_timeout() -> void:
 	teleport_sprite()
 
-
-func _on_detection_area_body_entered(body: Node3D) -> void:
-	print(body)
+func update_target_location(target_location: Vector3) -> void:
+	global_position = target_location

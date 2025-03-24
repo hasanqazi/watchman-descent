@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/overworld.gd" id="1_tyxf3"]
 [ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="1_vqljy"]
 [ext_resource type="PackedScene" uid="uid://bcpaay2w7bg8h" path="res://scenes/forest.tscn" id="3_20wmk"]
-[ext_resource type="Environment" uid="uid://bn2ohft3vj10p" path="res://resources/forest.tres" id="5_dtuhd"]
+[ext_resource type="Environment" uid="uid://dppc7nerc7sv" path="res://resources/maze.tres" id="6_ntg7y"]
 [ext_resource type="AudioStream" uid="uid://bfk4exbg8h15v" path="res://resources/forest_ambience.tres" id="6_r6lib"]
 [ext_resource type="PackedScene" uid="uid://cjmyndem6ev6r" path="res://scenes/enemy_manager.tscn" id="7_hwdhb"]
 [ext_resource type="PackedScene" uid="uid://1k4xls1mkqrb" path="res://scenes/main_maze.tscn" id="10_q6acv"]
@@ -48,7 +48,7 @@ locked_text = "This door is locked from inside"
 player = NodePath("../RetroPlayer/SubViewportContainer/SubViewport/Player")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("5_dtuhd")
+environment = ExtResource("6_ntg7y")
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_r6lib")
