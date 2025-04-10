@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://3geliyexguky"]
+
+[ext_resource type="PackedScene" uid="uid://sq6h74ip5tkt" path="res://assets/models/security_shed.glb" id="1_qyt3k"]
+[ext_resource type="PackedScene" uid="uid://hx68sama22l3" path="res://assets/models/bed.glb" id="2_sh63s"]
+[ext_resource type="PackedScene" uid="uid://b4bx3xevuw81m" path="res://scenes/door_2.tscn" id="3_umdc7"]
+[ext_resource type="PackedScene" uid="uid://vdmexjshmacl" path="res://assets/models/night_stand.glb" id="4_5u234"]
+[ext_resource type="PackedScene" uid="uid://bkg2hh2rhufbh" path="res://scenes/flashlight.tscn" id="5_8u5mi"]
+[ext_resource type="PackedScene" uid="uid://c2dq7jfu5g0y4" path="res://scenes/ac.tscn" id="6_86o84"]
+
+[node name="Security Shed" type="Node3D"]
+
+[node name="security_shed" parent="." instance=ExtResource("1_qyt3k")]
+
+[node name="bed" parent="." instance=ExtResource("2_sh63s")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.82992, 0.173205, -0.272582)
+
+[node name="door_2" parent="." instance=ExtResource("3_umdc7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00332767, 0.175355, 2.87958)
+
+[node name="night_stand" parent="." instance=ExtResource("4_5u234")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.399819, 0.173205, -2.32792)
+
+[node name="flashlight" parent="." instance=ExtResource("5_8u5mi")]
+transform = Transform3D(1, 0, 0, 0, 0.986214, 0.165478, 0, -0.165478, 0.986214, 1.94903, 1.17568, -1.43088)
+
+[node name="ac" parent="." instance=ExtResource("6_86o84")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.86891, 1.8645, -1.23642)
