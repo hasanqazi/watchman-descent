@@ -40,4 +40,4 @@ func lever_switched() -> void:
 	
 	if levers == max_levers:
 		print("All levers switched")
-		SignalBus.unlock_door.emit()
+		SignalBus.unlock_door.emit(3)

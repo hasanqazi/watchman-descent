@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://clgq07hc0fwx3"]
+[gd_scene load_steps=8 format=3 uid="uid://clgq07hc0fwx3"]
 
 [ext_resource type="Script" path="res://scripts/overworld.gd" id="1_tyxf3"]
 [ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="1_vqljy"]
@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://bfk4exbg8h15v" path="res://resources/forest_ambience.tres" id="6_r6lib"]
 [ext_resource type="Environment" uid="uid://bn2ohft3vj10p" path="res://resources/forest.tres" id="6_yorm8"]
 [ext_resource type="PackedScene" uid="uid://cjmyndem6ev6r" path="res://scenes/enemy_manager.tscn" id="7_hwdhb"]
-[ext_resource type="PackedScene" uid="uid://t8r7i8lci08b" path="res://scenes/maze_jumpscare.tscn" id="8_450mf"]
 [ext_resource type="PackedScene" uid="uid://1k4xls1mkqrb" path="res://scenes/main_maze.tscn" id="10_q6acv"]
 
 [node name="Overworld" type="Node3D"]
@@ -14,38 +13,8 @@ script = ExtResource("1_tyxf3")
 
 [node name="RetroPlayer" parent="." instance=ExtResource("1_vqljy")]
 
-[node name="MainMaze" parent="." instance=ExtResource("10_q6acv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.8861, 0)
-
-[node name="Ceiling" parent="MainMaze/NavigationRegion3D/maze_2" index="2"]
-visible = true
-
-[node name="NoLight" parent="MainMaze/NavigationRegion3D/maze_2" index="3"]
-visible = true
-
-[node name="basement_door" parent="MainMaze/NavigationRegion3D" index="1" node_paths=PackedStringArray("destination")]
-destination = NodePath("../../../Forest/basement_door/Destination")
-interact_text = "Exit"
-
-[node name="basement_door2" parent="MainMaze/NavigationRegion3D" index="4" node_paths=PackedStringArray("destination")]
-destination = NodePath("../../../Forest/basement_door2/Destination")
-level = 2
-locked = true
-locked_text = "I need to turn on the electricity first..."
-interact_text = "Exit"
-
-[node name="Forest" parent="." instance=ExtResource("3_20wmk")]
-
-[node name="basement_door" parent="Forest" index="1" node_paths=PackedStringArray("destination")]
-destination = NodePath("../../MainMaze/NavigationRegion3D/basement_door/Destination")
-level = 1
-interact_text = "Enter"
-
-[node name="basement_door2" parent="Forest" index="3"]
-locked = true
-locked_text = "This door is locked from inside"
-
 [node name="EnemyManager" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_hwdhb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0282679, 9.53674e-07, -0.0456924)
 player = NodePath("../RetroPlayer/SubViewportContainer/SubViewport/Player")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -56,13 +25,48 @@ stream = ExtResource("6_r6lib")
 volume_db = -15.0
 autoplay = true
 
-[node name="MazeJumpscare" parent="." instance=ExtResource("8_450mf")]
+[node name="Forest" parent="." instance=ExtResource("3_20wmk")]
+
+[node name="Forest Enter" parent="Forest" index="6" node_paths=PackedStringArray("destination")]
+unlock_id = 1
+destination = NodePath("../../MainMaze/Maze Enter/Destination")
+level = 1
+
+[node name="Forest Exit" parent="Forest" index="7" node_paths=PackedStringArray("destination")]
+unlock_id = 4
+destination = NodePath("Destination")
+locked = true
+locked_text = "It's locked from inside"
+
+[node name="MainMaze" parent="." instance=ExtResource("10_q6acv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -21, 0)
+
+[node name="Ceiling" parent="MainMaze/NavigationRegion3D/maze_2" index="2"]
+visible = true
+
+[node name="NoLight" parent="MainMaze/NavigationRegion3D/maze_2" index="3"]
+visible = true
+
+[node name="Maze Enter" parent="MainMaze" index="11" node_paths=PackedStringArray("destination")]
+unlock_id = 2
+destination = NodePath("../../Forest/Forest Enter/Destination")
+locked = false
+locked_text = ""
+interact_text = "Exit"
+
+[node name="Maze Exit" parent="MainMaze" index="12" node_paths=PackedStringArray("destination")]
+unlock_id = 3
+destination = NodePath("../../Forest/Forest Exit/Destination")
+level = 2
+locked = true
+locked_text = "I need to turn on the power first..."
+interact_text = "Exit"
 
 [editable path="RetroPlayer"]
+[editable path="Forest"]
+[editable path="Forest/Forest Enter"]
+[editable path="Forest/Forest Exit"]
 [editable path="MainMaze"]
 [editable path="MainMaze/NavigationRegion3D/maze_2"]
-[editable path="MainMaze/NavigationRegion3D/basement_door"]
-[editable path="MainMaze/NavigationRegion3D/basement_door2"]
-[editable path="Forest"]
-[editable path="Forest/basement_door"]
-[editable path="Forest/basement_door2"]
+[editable path="MainMaze/Maze Enter"]
+[editable path="MainMaze/Maze Exit"]

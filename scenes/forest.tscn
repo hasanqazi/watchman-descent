@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcpaay2w7bg8h"]
+[gd_scene load_steps=8 format=3 uid="uid://bcpaay2w7bg8h"]
 
 [ext_resource type="PackedScene" uid="uid://b4qnk4fdswfyr" path="res://assets/models/grass_2.glb" id="1_tpweb"]
 [ext_resource type="PackedScene" uid="uid://b75esojlycyay" path="res://scenes/basement_door.tscn" id="2_ggqgh"]
-[ext_resource type="PackedScene" uid="uid://orucsdsu1q06" path="res://assets/models/basement_door_cover.glb" id="3_fofvu"]
 [ext_resource type="PackedScene" uid="uid://bmbs820t00b8c" path="res://scenes/lamp_post.tscn" id="4_p0ak5"]
 [ext_resource type="PackedScene" uid="uid://bflutwryf6nrp" path="res://scenes/tree_douglas.tscn" id="12_cpw6v"]
 [ext_resource type="PackedScene" uid="uid://3geliyexguky" path="res://scenes/security_shed.tscn" id="12_g3a10"]
@@ -12,18 +11,6 @@
 [node name="Forest" type="Node3D"]
 
 [node name="grass_2" parent="." instance=ExtResource("1_tpweb")]
-
-[node name="basement_door" parent="." instance=ExtResource("2_ggqgh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.26149, 0, -18.3566)
-
-[node name="basement_door_cover" parent="." instance=ExtResource("3_fofvu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.21142, -9.53674e-07, -18.347)
-
-[node name="basement_door2" parent="." instance=ExtResource("2_ggqgh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.4879, 0, -23.1827)
-
-[node name="basement_door_cover2" parent="." instance=ExtResource("3_fofvu")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.4378, -9.53674e-07, -23.1923)
 
 [node name="lamp_post" parent="." instance=ExtResource("4_p0ak5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9797, 9.53674e-07, -3.57248)
@@ -620,3 +607,10 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -9.340
 
 [node name="artwork" parent="." instance=ExtResource("12_uw5u8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.58916, 1.47022, 3.23064)
+
+[node name="Forest Enter" parent="." instance=ExtResource("2_ggqgh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4557, 0, -20.2411)
+interact_text = "Enter"
+
+[node name="Forest Exit" parent="." instance=ExtResource("2_ggqgh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20.268, 0, -20.7331)

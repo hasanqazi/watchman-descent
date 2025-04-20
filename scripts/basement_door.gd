@@ -1,9 +1,10 @@
 extends Interactable
 
+@export var unlock_id: int
 @export var destination: Marker3D
 @export var level: Global.Levels
 @export var locked: bool = false
-@export var locked_text: String 
+@export var locked_text: String
 
 var interact_text_override: String
 
@@ -27,6 +28,7 @@ func update_interact_text() -> String:
 	else:
 		return interact_text_override
 
-func unlock_door() -> void:
-	locked = false
-	interact_text = update_interact_text()
+func unlock_door(id: int) -> void:
+	if (unlock_id == 3):
+		locked = false
+		interact_text = update_interact_text()

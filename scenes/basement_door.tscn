@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b75esojlycyay"]
+[gd_scene load_steps=5 format=3 uid="uid://b75esojlycyay"]
 
 [ext_resource type="PackedScene" uid="uid://d8dhhrutlob6" path="res://assets/models/basement_door.glb" id="1_eivmi"]
 [ext_resource type="Script" path="res://scripts/basement_door.gd" id="1_evspt"]
 [ext_resource type="AudioStream" uid="uid://bvddoc8272xls" path="res://assets/audio/metal_door_slam.wav" id="3_lakpc"]
+[ext_resource type="PackedScene" uid="uid://orucsdsu1q06" path="res://assets/models/basement_door_cover.glb" id="4_sx3ds"]
 
 [node name="basement_door" instance=ExtResource("1_eivmi")]
 script = ExtResource("1_evspt")
@@ -10,9 +11,11 @@ interactable_name = "Basement Door"
 interact_cooldown = 0.5
 interact_sound = ExtResource("3_lakpc")
 
-[node name="StaticBody3D" parent="Door " index="0"]
+[node name="StaticBody3D" parent="BasementDoor" index="0"]
 collision_layer = 3
 collision_mask = 3
 
 [node name="Destination" type="Marker3D" parent="." index="2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 0)
+
+[node name="basement_door_cover" parent="." index="3" instance=ExtResource("4_sx3ds")]
