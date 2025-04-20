@@ -29,6 +29,6 @@ func update_interact_text() -> String:
 		return interact_text_override
 
 func unlock_door(id: int) -> void:
-	if (unlock_id == 3):
+	if (unlock_id == id):
 		locked = false
 		interact_text = update_interact_text()

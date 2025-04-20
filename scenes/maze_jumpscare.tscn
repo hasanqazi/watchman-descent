@@ -1,12 +1,23 @@
 [gd_scene load_steps=7 format=3 uid="uid://t8r7i8lci08b"]
 
 [ext_resource type="Shader" path="res://shaders/dithering.gdshader" id="1_e302i"]
-[ext_resource type="Shader" path="res://shaders/bodycam.gdshader" id="2_xkr7g"]
 [ext_resource type="PackedScene" uid="uid://kacq3f2wkc1v" path="res://scenes/stalker.tscn" id="3_slo1w"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_e3byf"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wiuxq"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y6qvm"]
+[sub_resource type="Sky" id="Sky_1vkfn"]
+sky_material = SubResource("ProceduralSkyMaterial_wiuxq")
+
+[sub_resource type="Environment" id="Environment_ygio5"]
+background_mode = 1
+background_color = Color(0.137255, 0, 0, 1)
+sky = SubResource("Sky_1vkfn")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k53hc"]
 shader = ExtResource("1_e302i")
 shader_parameter/change_color_depth = true
 shader_parameter/target_color_depth = 4
@@ -15,28 +26,13 @@ shader_parameter/scale_resolution = true
 shader_parameter/target_resolution_scale = 3
 shader_parameter/enable_recolor = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_acpan"]
-shader = ExtResource("2_xkr7g")
-shader_parameter/width_scale = 1.02
-shader_parameter/height_scale = 0.6
-shader_parameter/distortion = 1.0
-shader_parameter/radius = 2.0
-shader_parameter/alpha = 1.0
-shader_parameter/crop = 0.943
-shader_parameter/crop_color = Color(0, 0, 0, 1)
-shader_parameter/crop_feathering = 0.1
-shader_parameter/channel_offset = 0.005
-shader_parameter/noise_strength = 1.0
-
 [node name="MazeJumpscare" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.8892)
-visible = false
-mesh = SubResource("BoxMesh_e3byf")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ygio5")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-material = SubResource("ShaderMaterial_y6qvm")
+material = SubResource("ShaderMaterial_k53hc")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -50,20 +46,11 @@ audio_listener_enable_3d = true
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="Bodycam" type="ColorRect" parent="SubViewportContainer/SubViewport"]
-material = SubResource("ShaderMaterial_acpan")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Bodycam"]
-
-[node name="Stalker" parent="." instance=ExtResource("3_slo1w")]
+[node name="Stalker" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_slo1w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.94158, -0.853968)
+immobile = true
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="SubViewportContainer/SubViewport"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -77,3 +64,5 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
 text = "Respawn"
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]

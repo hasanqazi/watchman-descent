@@ -49,10 +49,8 @@ shadow_mesh = SubResource("ArrayMesh_fa1r6")
 [node name="Stalker" instance=ExtResource("1_x2ler")]
 life_time = 50.0
 
-[node name="MeshInstance3D" parent="." index="0"]
-visible = false
-
 [node name="stalker" type="Node3D" parent="." index="3"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Cube" type="MeshInstance3D" parent="stalker" index="0"]
 mesh = SubResource("ArrayMesh_wue5i")

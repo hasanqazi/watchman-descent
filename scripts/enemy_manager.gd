@@ -7,7 +7,7 @@ var spawn_points: Array[Node] = []
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var mirror_timer: Timer = $MirrorTimer
 const MIN_SAFE_DIST: float = 10.0
-var previous_level = null
+var previous_level: Global.Levels = Global.Levels.FOREST
 
 func _ready() -> void:
 	spawn_points = get_tree().get_nodes_in_group("spawn_point")
@@ -17,7 +17,6 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	get_tree().call_group("enemies", "update_target_location", player.global_transform.origin)
 	
-	# Check for level change to Mirror level
 	if previous_level != Global.current_level and Global.current_level == Global.Levels.MIRROR:
 		mirror_timer.start()
 	
@@ -35,12 +34,12 @@ func _on_spawn_timer_timeout() -> void:
 	if Global.current_level == Global.Levels.MAZE:
 		spawn_maze_enemy()
 
-# New function for mirror timer timeout
+
 func _on_mirror_timer_timeout() -> void:
 	if Global.current_level == Global.Levels.MIRROR:
 		spawn_mirror_enemy()
 
-# Keep the original spawn function for maze enemies
+
 func spawn_maze_enemy() -> void:
 	var player_pos: Vector3 = player.global_transform.origin
 	
@@ -65,10 +64,10 @@ func spawn_maze_enemy() -> void:
 		enemy_instance.global_transform.origin = spawn_point.global_transform.origin
 		print("Maze Enemy spawned")
 
-# New separate function for mirror enemies
+
 func spawn_mirror_enemy() -> void:
 	var enemy_instance: Node3D = mirror_enemy.instantiate()
 	add_child(enemy_instance)
-	# Place the mirror enemy at a specific location or near the player
+
 	enemy_instance.global_transform.origin = player.global_transform.origin + Vector3(0, 0, 5)
 	print("Mirror Enemy spawned")

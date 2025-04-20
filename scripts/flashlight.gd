@@ -28,5 +28,8 @@ func activate() -> void:
 		spotlight.light_energy = 3.0 if powered else 0.0
 		ambient_bulb.light_energy = 0.2 if powered else 0.0
 		
+		Global.flashlight_powered = powered
+		print(Global.flashlight_powered)
+		
 		if audio_stream and audio_stream.stream:
 			audio_stream.play()
