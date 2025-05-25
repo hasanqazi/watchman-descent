@@ -13,6 +13,9 @@ script = ExtResource("1_tyxf3")
 
 [node name="RetroPlayer" parent="." instance=ExtResource("1_vqljy")]
 
+[node name="Player" parent="RetroPlayer/SubViewportContainer/SubViewport" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.6271, 0, -87.202)
+
 [node name="EnemyManager" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_hwdhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0282679, 9.53674e-07, -0.0456924)
 player = NodePath("../RetroPlayer/SubViewportContainer/SubViewport/Player")
@@ -27,16 +30,19 @@ autoplay = true
 
 [node name="Forest" parent="." instance=ExtResource("3_20wmk")]
 
-[node name="Forest Enter" parent="Forest" index="6" node_paths=PackedStringArray("destination")]
+[node name="Forest Enter" parent="Forest" index="4" node_paths=PackedStringArray("destination")]
 unlock_id = 1
 destination = NodePath("../../MainMaze/Maze Enter/Destination")
 level = 1
 
-[node name="Forest Exit" parent="Forest" index="7" node_paths=PackedStringArray("destination")]
+[node name="Forest Exit" parent="Forest" index="5" node_paths=PackedStringArray("destination")]
 unlock_id = 4
 destination = NodePath("Destination")
 locked = true
 locked_text = "It's locked from inside"
+
+[node name="priest" parent="Forest" index="6" node_paths=PackedStringArray("player")]
+player = NodePath("../../RetroPlayer/SubViewportContainer/SubViewport/Player")
 
 [node name="MainMaze" parent="." instance=ExtResource("10_q6acv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -21, 0)

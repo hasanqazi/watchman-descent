@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dexlxlce4tnk1"]
+
+[ext_resource type="PackedScene" uid="uid://ccpgc4lx7da2i" path="res://assets/models/priest.glb" id="1_fakpc"]
+[ext_resource type="Script" path="res://scripts/priest.gd" id="2_upjql"]
+
+[node name="priest" instance=ExtResource("1_fakpc")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0, 0, 0)
+script = ExtResource("2_upjql")
+trigger_radius = 6
+
+[node name="Cross" parent="." index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Cube_001" parent="." index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Cube_002" parent="." index="2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Cube_003" parent="." index="3"]
+transform = Transform3D(-0.102925, 0, -8.99795e-09, 0, 0.102925, 0, 8.99795e-09, 0, -0.102925, 0, 4.1175, 0)
+visible = false
+
+[node name="Cube_004" parent="." index="4"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Cube_005" parent="." index="5"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Cube_006" parent="." index="6"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

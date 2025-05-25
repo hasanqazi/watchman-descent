@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://d06w74txo46vq"]
+
+[ext_resource type="PackedScene" uid="uid://g8p5n71hbuer" path="res://assets/models/terrain2.glb" id="1_u2xth"]
+[ext_resource type="Shader" uid="uid://b6lujxmeds4xa" path="res://shaders/terrain.tres" id="2_ch0e0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oedbg"]
+render_priority = 0
+shader = ExtResource("2_ch0e0")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lljs0"]
+_surfaces = [{
+"aabb": AABB(-260.5, 0, -260.5, 521, 1e-05, 521),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gm06v"]
+resource_name = "terrain2_Plane"
+_surfaces = [{
+"aabb": AABB(-260.5, 0, -260.5, 521, 1e-05, 521),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 255, 255, 254, 255, 0, 0, 255, 255, 254, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("ShaderMaterial_oedbg"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 84, 213, 255, 255, 0, 0, 255, 255, 84, 213, 0, 0, 0, 0, 0, 0, 84, 213, 255, 255, 0, 0, 0, 0, 84, 213, 84, 213, 170, 42, 84, 213, 170, 42, 84, 213, 170, 42, 84, 213, 170, 42)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lljs0")
+
+[node name="terrain2" instance=ExtResource("1_u2xth")]
+
+[node name="Plane" parent="." index="0"]
+mesh = SubResource("ArrayMesh_gm06v")
