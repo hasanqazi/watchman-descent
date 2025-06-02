@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://v8b8qk6v2x41"]
+[gd_scene load_steps=9 format=3 uid="uid://v8b8qk6v2x41"]
 
 [ext_resource type="Shader" path="res://shaders/dithering.gdshader" id="1_gfj8x"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_w1nwm"]
+[ext_resource type="Texture2D" uid="uid://bxy2nqargk0aa" path="res://assets/texture/title.png" id="3_p7bqs"]
+[ext_resource type="Environment" uid="uid://bn2ohft3vj10p" path="res://resources/forest.tres" id="3_r2pom"]
+[ext_resource type="PackedScene" uid="uid://d06w74txo46vq" path="res://scenes/terrain_2.tscn" id="4_bgr8o"]
+[ext_resource type="PackedScene" uid="uid://bflutwryf6nrp" path="res://scenes/tree_douglas.tscn" id="5_72th5"]
+[ext_resource type="PackedScene" uid="uid://c5sk0j84shlje" path="res://scenes/cabin.tscn" id="6_qru1h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mtbj5"]
 shader = ExtResource("1_gfj8x")
@@ -24,6 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
+metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
@@ -31,27 +37,51 @@ audio_listener_enable_3d = true
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.74978, 0.74978, 0.74978, 1)
-
 [node name="Play" type="Button" parent="SubViewportContainer/SubViewport"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -130.0
-offset_top = -45.5
-offset_right = 130.0
-offset_bottom = 45.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 176.0
+offset_top = -350.0
+offset_right = 436.0
+offset_bottom = -259.0
+grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Play"
+
+[node name="Title" type="TextureRect" parent="SubViewportContainer/SubViewport"]
+offset_left = 160.0
+offset_right = 1440.0
+offset_bottom = 720.0
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("3_p7bqs")
+
+[node name="terrain2" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_bgr8o")]
+
+[node name="tree_douglas" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_72th5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.8365, -4.76837e-07, -84.1145)
+
+[node name="tree_douglas2" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_72th5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.4836, -4.76837e-07, -84.1145)
+
+[node name="tree_douglas3" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_72th5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1161, -4.76837e-07, -81.5971)
+
+[node name="cabin" parent="SubViewportContainer/SubViewport" instance=ExtResource("6_qru1h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.5403, 4.76837e-07, -77.2985)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.0417, 4.51839, -59.1015)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_r2pom")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.2697, 2.0498, -78.0036)
+light_color = Color(1, 0, 0, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 0.0
+omni_range = 5.53217
+omni_attenuation = -1.117
 
 [connection signal="pressed" from="SubViewportContainer/SubViewport/Play" to="." method="_on_play_pressed"]

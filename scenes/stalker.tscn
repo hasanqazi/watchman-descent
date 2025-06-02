@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://b3ejywaswgltm" path="res://scenes/stalker_anim.tscn" id="2_k8743"]
 
 [node name="Stalker" instance=ExtResource("1_x2ler")]
-speed = 5.0
 life_time = 50.0
 
 [node name="stalker_anim" parent="." index="3" instance=ExtResource("2_k8743")]

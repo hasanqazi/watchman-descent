@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://1k4xls1mkqrb"]
+[gd_scene load_steps=21 format=3 uid="uid://1k4xls1mkqrb"]
 
 [ext_resource type="PackedScene" uid="uid://dr6eqs0we53ub" path="res://assets/models/maze_2.glb" id="1_qsk7a"]
 [ext_resource type="PackedScene" uid="uid://b75esojlycyay" path="res://scenes/basement_door.tscn" id="2_kk2hu"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://blkkb48g4so0r" path="res://assets/texture/graffiti.png" id="8_ibo22"]
 [ext_resource type="PackedScene" uid="uid://bjh0f48tb4tac" path="res://assets/models/box.glb" id="9_g8n31"]
 [ext_resource type="PackedScene" uid="uid://b3ph8l2hkyuo7" path="res://scenes/spawn_point.tscn" id="13_0g6q2"]
+[ext_resource type="PackedScene" uid="uid://cs1j2vuc3fdov" path="res://assets/models/barrel.glb" id="14_vjc16"]
+[ext_resource type="PackedScene" uid="uid://dnkb5acxy3s0t" path="res://scenes/note.tscn" id="15_gdnh8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvy4v"]
 albedo_color = Color(0, 1, 0, 1)
@@ -236,5 +238,17 @@ locked_text = "I should turn on the power first..."
 
 [node name="Maze Exit" parent="." instance=ExtResource("2_kk2hu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.9897, -2.38419e-07, -2.15423)
+
+[node name="barrel" parent="." instance=ExtResource("14_vjc16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36411, 0, -20.5782)
+
+[node name="barrel2" parent="." instance=ExtResource("14_vjc16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5135, -9.53674e-07, 7.94411)
+
+[node name="barrel3" parent="." instance=ExtResource("14_vjc16")]
+transform = Transform3D(0.0360681, 0, -0.999349, 0, 1, 0, 0.999349, 0, 0.0360681, 12.0638, 2.38419e-07, 7.12361)
+
+[node name="note" parent="." instance=ExtResource("15_gdnh8")]
+transform = Transform3D(0.99331, -6.52747e-08, 0.115475, 6.10496e-08, 1, 4.01257e-08, -0.115475, -3.28076e-08, 0.99331, -32.2514, 0.00987113, -33.8698)
 
 [editable path="NavigationRegion3D/maze_2"]
