@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://clgq07hc0fwx3"]
+[gd_scene load_steps=9 format=3 uid="uid://clgq07hc0fwx3"]
 
 [ext_resource type="Script" path="res://scripts/overworld.gd" id="1_tyxf3"]
 [ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="1_vqljy"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bfk4exbg8h15v" path="res://resources/forest_ambience.tres" id="6_r6lib"]
 [ext_resource type="Environment" uid="uid://bn2ohft3vj10p" path="res://resources/forest.tres" id="6_yorm8"]
 [ext_resource type="PackedScene" uid="uid://cjmyndem6ev6r" path="res://scenes/enemy_manager.tscn" id="7_hwdhb"]
+[ext_resource type="PackedScene" uid="uid://bx3ufi2rd0kol" path="res://scenes/dialogue_trigger.tscn" id="8_nyc82"]
 [ext_resource type="PackedScene" uid="uid://1k4xls1mkqrb" path="res://scenes/main_maze.tscn" id="10_q6acv"]
 
 [node name="Overworld" type="Node3D"]
@@ -47,12 +48,6 @@ player = NodePath("../../RetroPlayer/SubViewportContainer/SubViewport/Player")
 [node name="MainMaze" parent="." instance=ExtResource("10_q6acv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -21, 0)
 
-[node name="Ceiling" parent="MainMaze/NavigationRegion3D/maze_2" index="2"]
-visible = true
-
-[node name="NoLight" parent="MainMaze/NavigationRegion3D/maze_2" index="3"]
-visible = true
-
 [node name="Maze Enter" parent="MainMaze" index="11" node_paths=PackedStringArray("destination")]
 unlock_id = 2
 destination = NodePath("../../Forest/Forest Enter/Destination")
@@ -67,6 +62,15 @@ level = 2
 locked = true
 locked_text = "I need to turn on the power first..."
 interact_text = "Exit"
+
+[node name="DialogueTrigger" parent="." instance=ExtResource("8_nyc82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.2907, 0.00880837, -85.732)
+dialogue = "Ugh.. the security monitor is down again..."
+time = 2.0
+
+[node name="DialogueTrigger2" parent="." instance=ExtResource("8_nyc82")]
+transform = Transform3D(4.415, 0, 0, 0, 1, 0, 0, 0, 1, 70.2907, 0.00880837, -80.7257)
+time = 5.0
 
 [editable path="RetroPlayer"]
 [editable path="Forest"]

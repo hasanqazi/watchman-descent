@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw5i4f446oq76"]
+
+[ext_resource type="PackedScene" uid="uid://bnuyifcblxkvh" path="res://assets/models/gate.glb" id="1_bfqv2"]
+
+[node name="Gate" type="Node3D"]
+
+[node name="gate" parent="." instance=ExtResource("1_bfqv2")]

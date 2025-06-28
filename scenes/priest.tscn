@@ -1,7 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://dexlxlce4tnk1"]
+[gd_scene load_steps=6 format=4 uid="uid://dexlxlce4tnk1"]
 
 [ext_resource type="PackedScene" uid="uid://ccpgc4lx7da2i" path="res://assets/models/priest.glb" id="1_fakpc"]
 [ext_resource type="Script" path="res://scripts/priest.gd" id="2_upjql"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7ur3"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.3409, 0.271824, 0.0924435, 1)
+metallic = 0.518182
+roughness = 0.527273
+emission_enabled = true
+emission = Color(1, 0.772549, 0, 1)
+emission_energy_multiplier = 0.3
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4tbuw"]
+_surfaces = [{
+"aabb": AABB(-0.120314, 1.24058, 0.109195, 0.232917, 0.314803, 0.0328662),
+"format": 34896613377,
+"index_count": 144,
+"index_data": PackedByteArray("CQADAAEACQAKAAMACgAHAAMACgAMAAcADAAFAAcADAAOAAUADgABAAUADgAJAAEAAgAEAAYAAgAAAAQABwABAAMABwAFAAEABAAIAA8ABAAAAAgADwAJAA4ADwAIAAkABgAPAA0ABgAEAA8ACQASAAoACQARABIAAgANAAsAAgAGAA0ACwAMAAoACwANAAwAAAALAAgAAAACAAsADwAVAA0ADwAXABUADwALAA0ADwAIAAsADgAKAAwADgAJAAoAFQAWABQAFQAXABYAEAASABEAEAATABIADAAWAA4ADAAUABYADgAXAA8ADgAWABcADQAUAAwADQAVABQACwAQAAgACwATABAACgATAAsACgASABMACAARAAkACAAQABEA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("TF6xAP//AABMXv//VooAAExeAACodQAATF5N/wAAAACyobEA//8AALKh//9WigAAsqEAAKh1AACyoU3/AAAAAExeZoqIwAAATF43un+qAABMXoW5KCAAAExetIkxNgAAsqGFuSggAACyobSJMTYAALKhN7p/qgAAsqFmiojAAAAAAGaKiMAAAAAAN7p/qgAAAACFuSggAAAAALSJMTYAAP//hbkoIAAA//+0iTE2AAD//ze6f6oAAP//ZoqIwAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_maho1"]
+resource_name = "priest_Cube_001"
+_surfaces = [{
+"aabb": AABB(-0.120314, 1.24058, 0.109195, 0.232917, 0.314803, 0.0328662),
+"attribute_data": PackedByteArray("FHu3ghR76X5DfxWBXHi3guxyeXnMfV1+XHj/f8x96X5Df82DpHV5eaR1/3/MfRWBFHv/fxR7MXxDf4WGXHj/f+xyMXzMfV1+XHi3gsx9MXxDf82DpHUxfKR1t4LMfaV7nHm3gqR1eXkUe+l+zH0VgRp5t4Lscv9/in5dfqR1/39idv9/in4VgVx4eXnkdv9/zH3pfsx9zYOkdbeCYna3gop+pXtceDF85Ha3gsx9hYbMfc2DGnn/f+xyt4KKfl1+nHn/f6R1MXwUe4WGzH2Fhpx5hYYUe7eCDH+lexp5hYbscjF8in6le6R1MXxidjF8in5dfuR2MXzMfbeCDH9dfqR1hYZidoWGin5dfuR2hYbMfbeCDH9dfhp5MXzscoWGin4VgZx5MXwUe7eCDH8VgQ=="),
+"format": 34896613399,
+"index_count": 144,
+"index_data": PackedByteArray("HgALAAUAHgAhAAsAIAAWAAoAIAAnABYAKAARABcAKAAvABEALQADAA8ALQAcAAMABwANABMABwABAA0AFQAEAAkAFQAQAAQADAAYADAADAAAABgAMAAcAC0AMAAYABwAFAAzACwAFAAOADMAHQA6AB8AHQA4ADoABgAqACMABgASACoAIwAnACAAIwAqACcAAgAlABsAAgAIACUAMgBEACsAMgBKAEQAMQAiACkAMQAZACIALgAfACYALgAdAB8ARQBIAEIARQBLAEgANgA8ADkANgA/ADwAJgBHAC4AJgBAAEcALQBJADAALQBGAEkAKgBBACcAKgBDAEEAJAA1ABoAJAA+ADUAIAA9ACMAIAA7AD0AGAA3ABwAGAA0ADcA"),
+"material": SubResource("StandardMaterial3D_m7ur3"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 76,
+"vertex_data": PackedByteArray("TF6xAP//BcBMXrEA//811ExesQD//zXUTF7//1aKBcBMXv//Vop41kxe//9WijXUTF4AAKh1nP5MXgAAqHU11ExeAACodTXUTF5N/wAAeNZMXk3/AACc/kxeTf8AADXUsqGxAP//BcCyobEA//811LKhsQD//3jWsqH//1aKBcCyof//Vop41rKh//9WinjWsqEAAKh1nP6yoQAAqHU11LKhAACodXjWsqFN/wAAeNayoU3/AACc/rKhTf8AAHjWTF5miojABcBMXmaKiMB41kxeZoqIwDXUTF5miojANdRMXje6f6oFwExeN7p/qnjWTF43un+qNdRMXoW5KCB41kxehbkoIJz+TF6FuSggNdRMXrSJMTZ41kxetIkxNpz+TF60iTE2NdRMXrSJMTY11LKhhbkoIHjWsqGFuSggnP6yoYW5KCB41rKhtIkxNnjWsqG0iTE2nP6yobSJMTY11LKhtIkxNnjWsqE3un+qBcCyoTe6f6p41rKhN7p/qnjWsqFmiojABcCyoWaKiMB41rKhZoqIwDXUsqFmiojAeNYAAGaKiMAFwAAAZoqIwDXUAABmiojANdQAADe6f6oFwAAAN7p/qnjWAAA3un+qNdQAAIW5KCB41gAAhbkoIJz+AACFuSggNdQAALSJMTac/gAAtIkxNjXUAAC0iTE2NdT//4W5KCB41v//hbkoIJz+//+FuSggeNb//7SJMTac/v//tIkxNjXU//+0iTE2eNb//ze6f6oFwP//N7p/qnjW//83un+qeNb//2aKiMAFwP//ZoqIwDXU//9miojAeNbvgu+CBVYFVgVWCqzvgu+CptRYKwVWCqw8P8LABVYFVgVWCqym1FgrPD/CwAVWCqzvgu+CBVYFVlersFbvgu+CptRYK1ersFY8P8LABVYFVlersFam1FgrPD/CwFersFbvgu+CptRYKwVWBVYFVgqs74LvgqbUWCsFVgqsptRYKzw/wsAFVgqsptRYKzw/wsAFVgVWBVYKrKbUWCs8P8LAV6uwVqbUWCs8P8LABVYFVlersFbvgu+CptRYK1ersFbvgu+CptRYKwVWBVZXq7BW74LvggVWBVYFVgqs74LvgqbUWCsFVgqsptRYKzw/wsAFVgqsPD/CwAVWBVYFVgqsptRYKzw/wsBXq7BWPD/CwAVWBVZXq7BW74LvgqbUWCtXq7BW74LvggVWBVZXq7BW")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4tbuw")
 
 [node name="priest" instance=ExtResource("1_fakpc")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0, 0, 0)
@@ -10,6 +52,7 @@ trigger_radius = 6
 
 [node name="Cross" parent="." index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = SubResource("ArrayMesh_maho1")
 
 [node name="Cube_001" parent="." index="1"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

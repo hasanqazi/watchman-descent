@@ -162,12 +162,6 @@ navigation_mesh = SubResource("NavigationMesh_8fx8h")
 
 [node name="maze_2" parent="NavigationRegion3D" instance=ExtResource("1_qsk7a")]
 
-[node name="Ceiling" parent="NavigationRegion3D/maze_2" index="2"]
-visible = false
-
-[node name="NoLight" parent="NavigationRegion3D/maze_2" index="3"]
-visible = false
-
 [node name="human_1" parent="NavigationRegion3D" instance=ExtResource("3_1ibfu")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -33.1673, 0, -33.7578)
 

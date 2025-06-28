@@ -67,6 +67,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.4836, -4.76837e-07, -84.11
 [node name="tree_douglas3" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_72th5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1161, -4.76837e-07, -81.5971)
 
+[node name="tree_douglas4" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_72th5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.6348, -4.76837e-07, -98.974)
+
+[node name="tree_douglas5" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_72th5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.3897, -4.76837e-07, -103.614)
+
+[node name="tree_douglas6" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_72th5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.9332, -4.76837e-07, -101.648)
+
+[node name="tree_douglas7" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_72th5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.02, -4.76837e-07, -101.648)
+
+[node name="tree_douglas8" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_72th5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.7616, -4.76837e-07, -119.444)
+
+[node name="tree_douglas9" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_72th5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.4666, -4.76837e-07, -91.0789)
+
+[node name="tree_douglas10" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_72th5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1497, -4.76837e-07, -95.8904)
+
+[node name="tree_douglas12" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_72th5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.61, -4.76837e-07, -95.4038)
+
+[node name="tree_douglas11" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_72th5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5555, -4.76837e-07, -102.661)
+
 [node name="cabin" parent="SubViewportContainer/SubViewport" instance=ExtResource("6_qru1h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.5403, 4.76837e-07, -77.2985)
 

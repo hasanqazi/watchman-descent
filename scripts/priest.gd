@@ -5,6 +5,8 @@ extends Node3D
 @export var run_radius: int = 10
 @export var move_speed: float = 20.0
 
+@export var scare_sound: AudioStream
+
 func _process(delta: float) -> void:
 	if player == null:
 		return
@@ -16,6 +18,7 @@ func _process(delta: float) -> void:
 		global_position += direction * move_speed * delta
 		
 	if distance_to_player <= trigger_radius:
+		SignalBus.emit.play_interact_audio(scare_sound)
 		queue_free()
 		
 	else:

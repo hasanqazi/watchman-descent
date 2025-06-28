@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://doxrwhr352khr"]
+
+[ext_resource type="Texture2D" uid="uid://be3pchy0kos" path="res://assets/texture/tree.png" id="1_bs3ms"]
+
+[node name="FakeTree" type="Sprite3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 10.7651, 0)
+billboard = 2
+texture = ExtResource("1_bs3ms")
