@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dir70hrc2tyki"]
+
+[ext_resource type="Texture2D" uid="uid://qmhrts57noym" path="res://assets/texture/blood_1.png" id="1_yw2h7"]
+
+[node name="Blood" type="Node3D"]
+
+[node name="Decal" type="Decal" parent="." groups=["mirror_blood"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0260315, 0)
+size = Vector3(2, 0.109802, 2)
+texture_albedo = ExtResource("1_yw2h7")

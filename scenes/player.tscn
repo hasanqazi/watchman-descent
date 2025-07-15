@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccejkq2fk2ey"]
+[gd_scene load_steps=14 format=3 uid="uid://ccejkq2fk2ey"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ccqpj"]
 [ext_resource type="Script" path="res://scripts/interact.gd" id="2_wl2v4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/notes_viewer.gd" id="4_tmdrh"]
 [ext_resource type="Texture2D" uid="uid://xtpp3d5rbmap" path="res://assets/texture/close.png" id="5_nrg6e"]
 [ext_resource type="Script" path="res://scripts/dialogue_text.gd" id="8_qv0qh"]
+[ext_resource type="AudioStream" uid="uid://5x35skxayr78" path="res://assets/audio/Footsteps_walking.wav" id="10_ikjml"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rocxm"]
 albedo_color = Color(0.596078, 0, 1, 1)
@@ -140,5 +141,9 @@ script = ExtResource("8_qv0qh")
 
 [node name="InteractSound" type="AudioStreamPlayer" parent="."]
 script = ExtResource("4_f6jjm")
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_ikjml")
 
 [connection signal="pressed" from="Control/NotesViewer/CloseButton" to="Control/NotesViewer" method="_on_close_button_pressed"]

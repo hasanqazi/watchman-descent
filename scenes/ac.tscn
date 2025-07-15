@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2dq7jfu5g0y4"]
+[gd_scene load_steps=3 format=3 uid="uid://c2dq7jfu5g0y4"]
 
 [ext_resource type="PackedScene" uid="uid://5rmu12qosi48" path="res://assets/models/ac.glb" id="1_pqnup"]
+[ext_resource type="AudioStream" uid="uid://cwlopaxvavb3j" path="res://assets/audio/AC intake.wav" id="2_0hrvn"]
 
 [node name="ac" instance=ExtResource("1_pqnup")]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("2_0hrvn")
+volume_db = -15.0
+autoplay = true

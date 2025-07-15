@@ -39,6 +39,7 @@ enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg", "r
 [global_group]
 
 enemies=""
+mirror_blood=""
 
 [importer_defaults]
 
@@ -87,3 +88,7 @@ activate={
 [physics]
 
 3d/physics_engine="JoltPhysics3D"
+
+[rendering]
+
+occlusion_culling/use_occlusion_culling=true

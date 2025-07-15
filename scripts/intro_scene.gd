@@ -1,7 +1,7 @@
 extends Control
 
 @onready var dialogue: RichTextLabel = %Dialogue
-
+@onready var typewriter_player: AudioStreamPlayer = %TyperwriterPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,7 +9,7 @@ func _ready() -> void:
 		"We found it… bodycam footage, still intact. Location matches the last GPS ping - deep in Eldergrove Forest.",
 		"Eldergrove Ranger Cabin - Restricted Access \n
 		No sign of him... just this camera. Let's see what really happened down there."
-	])
+	], typewriter_player)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

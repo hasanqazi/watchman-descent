@@ -1,16 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://clgq07hc0fwx3"]
+[gd_scene load_steps=11 format=3 uid="uid://clgq07hc0fwx3"]
 
 [ext_resource type="Script" path="res://scripts/overworld.gd" id="1_tyxf3"]
 [ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="1_vqljy"]
 [ext_resource type="PackedScene" uid="uid://bcpaay2w7bg8h" path="res://scenes/forest.tscn" id="3_20wmk"]
-[ext_resource type="AudioStream" uid="uid://bfk4exbg8h15v" path="res://resources/forest_ambience.tres" id="6_r6lib"]
+[ext_resource type="AudioStream" uid="uid://bfk4exbg8h15v" path="res://resources/forest_ambience.tres" id="5_os8ot"]
 [ext_resource type="Environment" uid="uid://bn2ohft3vj10p" path="res://resources/forest.tres" id="6_yorm8"]
 [ext_resource type="PackedScene" uid="uid://cjmyndem6ev6r" path="res://scenes/enemy_manager.tscn" id="7_hwdhb"]
 [ext_resource type="PackedScene" uid="uid://bx3ufi2rd0kol" path="res://scenes/dialogue_trigger.tscn" id="8_nyc82"]
+[ext_resource type="ArrayOccluder3D" uid="uid://bijv3f2ormwly" path="res://resources/overworld.occ" id="9_e7hyf"]
+[ext_resource type="PackedScene" uid="uid://dir70hrc2tyki" path="res://scenes/blood.tscn" id="10_5l5qi"]
 [ext_resource type="PackedScene" uid="uid://1k4xls1mkqrb" path="res://scenes/main_maze.tscn" id="10_q6acv"]
 
-[node name="Overworld" type="Node3D"]
+[node name="Overworld" type="Node3D" node_paths=PackedStringArray("door_unlocked_dialogue")]
 script = ExtResource("1_tyxf3")
+door_unlocked_dialogue = NodePath("LeversSwitchedDialogue")
 
 [node name="RetroPlayer" parent="." instance=ExtResource("1_vqljy")]
 
@@ -25,7 +28,7 @@ player = NodePath("../RetroPlayer/SubViewportContainer/SubViewport/Player")
 environment = ExtResource("6_yorm8")
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_r6lib")
+stream = ExtResource("5_os8ot")
 volume_db = -15.0
 autoplay = true
 
@@ -71,6 +74,26 @@ time = 2.0
 [node name="DialogueTrigger2" parent="." instance=ExtResource("8_nyc82")]
 transform = Transform3D(4.415, 0, 0, 0, 1, 0, 0, 0, 1, 70.2907, 0.00880837, -80.7257)
 time = 5.0
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("9_e7hyf")
+
+[node name="LeversSwitchedDialogue" parent="." instance=ExtResource("8_nyc82")]
+transform = Transform3D(-0.00774918, 0, -0.999986, 0, 1.035, 0, 1.47998, 0, -0.00523593, 4.00036, -21.002, 2.27026)
+dialogue = "I need to follow the pipes to the exit"
+time = 3.0
+
+[node name="Blood" parent="." instance=ExtResource("10_5l5qi")]
+transform = Transform3D(2.58969, 0, 0, 0, 1, 0, 0, 0, 2.34324, 69.5469, 0.00880814, -86.5697)
+
+[node name="Blood2" parent="." instance=ExtResource("10_5l5qi")]
+transform = Transform3D(-2.48449e-08, -1, 5.31333e-08, 0.568386, -4.37114e-08, -1.21555, 1.17881, 0, 0.586102, 73.2417, 1.8029, -88.9019)
+
+[node name="Blood3" parent="." instance=ExtResource("10_5l5qi")]
+transform = Transform3D(2.4987, 0, 0, 0, 1, 0, 0, 0, 2.19467, 71.3865, 0.00880861, -88.9249)
+
+[node name="Blood4" parent="." instance=ExtResource("10_5l5qi")]
+transform = Transform3D(2.91213, 8.34277e-09, 0.396269, 0.56622, -4.29078e-08, -2.03806, 0, 1, -9.07546e-08, 69.7877, 1.53616, -90.5889)
 
 [editable path="RetroPlayer"]
 [editable path="Forest"]

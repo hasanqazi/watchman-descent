@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://dexlxlce4tnk1"]
+[gd_scene load_steps=7 format=4 uid="uid://dexlxlce4tnk1"]
 
 [ext_resource type="PackedScene" uid="uid://ccpgc4lx7da2i" path="res://assets/models/priest.glb" id="1_fakpc"]
 [ext_resource type="Script" path="res://scripts/priest.gd" id="2_upjql"]
+[ext_resource type="AudioStream" uid="uid://mucw53ee6s0n" path="res://assets/audio/Stinger.wav" id="3_n4u2b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7ur3"]
 resource_name = "Material"
@@ -49,6 +50,8 @@ shadow_mesh = SubResource("ArrayMesh_4tbuw")
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0, 0, 0)
 script = ExtResource("2_upjql")
 trigger_radius = 6
+move_speed = 40.0
+scare_sound = ExtResource("3_n4u2b")
 
 [node name="Cross" parent="." index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

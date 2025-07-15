@@ -1,23 +1,100 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpi2fetqknkoa"]
+[gd_scene load_steps=23 format=3 uid="uid://bpi2fetqknkoa"]
 
 [ext_resource type="Script" path="res://scripts/mirror_enemy.gd" id="1_lh008"]
-[ext_resource type="Texture2D" uid="uid://8464ps5tgijd" path="res://icon.svg" id="2_i2xkj"]
+[ext_resource type="Texture2D" uid="uid://dntacfy0hbqtq" path="res://assets/texture/mouth/_a_frm0,70.png" id="2_btd1o"]
+[ext_resource type="Texture2D" uid="uid://bfq607j8111o6" path="res://assets/texture/mouth/_a_frm1,70.png" id="3_638sk"]
+[ext_resource type="Texture2D" uid="uid://dcjyaf7rh6k02" path="res://assets/texture/mouth/_a_frm2,70.png" id="4_6vbal"]
+[ext_resource type="Texture2D" uid="uid://cqjqqmbyu60cs" path="res://assets/texture/mouth/_a_frm3,70.png" id="5_x66cu"]
+[ext_resource type="Texture2D" uid="uid://f6oknoutpltd" path="res://assets/texture/mouth/_a_frm4,70.png" id="6_rml0k"]
+[ext_resource type="Texture2D" uid="uid://dafvkh4lp4px0" path="res://assets/texture/mouth/_a_frm5,70.png" id="7_yvmj7"]
+[ext_resource type="Texture2D" uid="uid://d26ukcno54w87" path="res://assets/texture/mouth/_a_frm6,70.png" id="8_g5ujc"]
+[ext_resource type="Texture2D" uid="uid://r6aqyo3f26oy" path="res://assets/texture/mouth/_a_frm7,70.png" id="9_x0ddh"]
+[ext_resource type="Texture2D" uid="uid://b5m6leowcwm2n" path="res://assets/texture/mouth/_a_frm8,70.png" id="10_f1viv"]
+[ext_resource type="Texture2D" uid="uid://b74nb65okid0r" path="res://assets/texture/mouth/_a_frm9,70.png" id="11_lkdpk"]
+[ext_resource type="Texture2D" uid="uid://dsvw4fgtokho5" path="res://assets/texture/mouth/_a_frm10,70.png" id="12_oqa2n"]
+[ext_resource type="Texture2D" uid="uid://qk6k3fowmubh" path="res://assets/texture/mouth/_a_frm11,70.png" id="13_rtca3"]
+[ext_resource type="Texture2D" uid="uid://cdnx6j33j3urm" path="res://assets/texture/mouth/_a_frm12,70.png" id="14_0iadj"]
+[ext_resource type="Texture2D" uid="uid://csp34lx12bu2x" path="res://assets/texture/mouth/_a_frm13,70.png" id="15_grfs5"]
+[ext_resource type="Texture2D" uid="uid://cqtl5wd0nvick" path="res://assets/texture/mouth/_a_frm14,70.png" id="16_wqhx2"]
+[ext_resource type="Texture2D" uid="uid://crqb1fieikx5x" path="res://assets/texture/mouth/_a_frm15,70.png" id="17_vlcr4"]
+[ext_resource type="Texture2D" uid="uid://dxv6qujuktlxw" path="res://assets/texture/mouth/_a_frm16,70.png" id="18_c0f12"]
+[ext_resource type="Texture2D" uid="uid://b8kqirmetqqe8" path="res://assets/texture/mouth/_a_frm17,70.png" id="19_i5cpk"]
+[ext_resource type="Texture2D" uid="uid://phqbnysbujpg" path="res://assets/texture/mouth/_a_frm18,70.png" id="20_d3h8a"]
+[ext_resource type="Texture2D" uid="uid://drqbjg7shr4n7" path="res://assets/texture/mouth/_a_frm19,70.png" id="21_pcgci"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xqlsw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_i2xkj")
+"texture": ExtResource("2_btd1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_638sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6vbal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x66cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rml0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yvmj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g5ujc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_x0ddh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_f1viv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lkdpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_oqa2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rtca3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0iadj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_grfs5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wqhx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vlcr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_c0f12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_i5cpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_d3h8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_pcgci")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="MirrorEnemy" type="Node3D" groups=["enemies"]]
 script = ExtResource("1_lh008")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 1
 sprite_frames = SubResource("SpriteFrames_xqlsw")
 
 [node name="SphereVisual" type="MeshInstance3D" parent="."]

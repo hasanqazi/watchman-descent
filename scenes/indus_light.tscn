@@ -53,6 +53,7 @@ light_color = Color(0.960784, 0.878431, 0.6, 1)
 light_energy = 4.0
 light_cull_mask = 4294967287
 shadow_enabled = true
+distance_fade_enabled = true
 spot_range = 4.76058
 spot_angle = 51.653
 

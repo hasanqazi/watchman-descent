@@ -17,14 +17,16 @@ func _ready() -> void:
 	is_node_ready = true
 	update_visuals()
 	teleport_sprite()
-	sprite.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	
+	sprite.play("default")
+	#sprite.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 
-func _process(_delta: float) -> void:
-	if main_camera != null:
-		var camera_pos: Vector3 = main_camera.global_transform.origin
-		sprite.look_at(camera_pos, Vector3.UP)
-		sprite.rotation.x = 0
-		sprite.rotation.z = 0
+#func _process(_delta: float) -> void:
+	#if main_camera != null:
+		#var camera_pos: Vector3 = main_camera.global_transform.origin
+		#sprite.look_at(camera_pos, Vector3.UP)
+		#sprite.rotation.x = 0
+		#sprite.rotation.z = 0
 
 func update_visuals() -> void:
 	if not is_node_ready:

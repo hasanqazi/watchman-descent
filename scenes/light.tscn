@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=4 uid="uid://dk1o3us2fexid"]
+[gd_scene load_steps=7 format=4 uid="uid://dk1o3us2fexid"]
 
 [ext_resource type="PackedScene" uid="uid://brkp76fd8yuhp" path="res://assets/models/light.glb" id="1_ohnoj"]
+[ext_resource type="Script" path="res://scripts/light.gd" id="2_eriw4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ku4ja"]
 resource_name = "Base"
 cull_mode = 2
 albedo_color = Color(0.136356, 0.136356, 0.136356, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2n4uh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvuyv"]
 resource_name = "Light"
 cull_mode = 2
-albedo_color = Color(0.960782, 0.878432, 0.6, 1)
+albedo_color = Color(0.960784, 0.878431, 0.6, 1)
 emission_enabled = true
 emission = Color(0.894118, 0.439216, 0.145098, 1)
 emission_energy_multiplier = 6.76
@@ -59,7 +60,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 6,
 "index_data": PackedByteArray("AQACAAMAAQAAAAIA"),
-"material": SubResource("StandardMaterial3D_2n4uh"),
+"material": SubResource("StandardMaterial3D_uvuyv"),
 "name": "Light",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -70,12 +71,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_74ku4")
 
 [node name="light" instance=ExtResource("1_ohnoj")]
+script = ExtResource("2_eriw4")
 
 [node name="Cube" parent="." index="0"]
 mesh = SubResource("ArrayMesh_cq6jk")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-light_color = Color(0.960784, 0.878431, 0.6, 1)
+light_color = Color(0.960784, 0.223529, 0, 1)
 spot_range = 7.042
 spot_angle = 82.7671

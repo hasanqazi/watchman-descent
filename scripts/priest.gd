@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 		global_position += direction * move_speed * delta
 		
 	if distance_to_player <= trigger_radius:
-		SignalBus.emit.play_interact_audio(scare_sound)
+		SignalBus.play_interact_audio.emit(scare_sound)
 		queue_free()
 		
 	else:

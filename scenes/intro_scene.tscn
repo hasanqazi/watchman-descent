@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://wlkmyxfduyga"]
+[gd_scene load_steps=5 format=3 uid="uid://wlkmyxfduyga"]
 
 [ext_resource type="Shader" path="res://shaders/dithering.gdshader" id="1_p2i3h"]
 [ext_resource type="Script" path="res://scripts/intro_scene.gd" id="1_rclj8"]
+[ext_resource type="AudioStream" uid="uid://fkoa0mj8d7e7" path="res://assets/audio/typewriter.wav" id="3_hwwyo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hppg5"]
 shader = ExtResource("1_p2i3h")
@@ -60,3 +61,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
+
+[node name="TyperwriterPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_hwwyo")
+volume_db = -16.0
