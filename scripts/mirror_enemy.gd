@@ -49,7 +49,7 @@ func update_sphere_visual() -> void:
 	sphere_visual.mesh = sphere_mesh
 
 func update_cutoff_ring() -> void:
-	var cutoff_height: float = radius * 2.0 * 0.6  # Fixed 60% from bottom
+	var cutoff_height: float = radius * 2.0 * 0.6 
 	var ring_y: float = -radius + cutoff_height
 	var ring_radius: float = sqrt(cutoff_height * (2.0 * radius - cutoff_height))
 	

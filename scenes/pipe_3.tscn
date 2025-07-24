@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgbrdub5yotl8"]
+
+[ext_resource type="PackedScene" uid="uid://bn0qol7x55vc" path="res://assets/models/pipe_3.glb" id="1_84tha"]
+
+[node name="Pipe3" type="Node3D"]
+
+[node name="pipe_3" parent="." instance=ExtResource("1_84tha")]
