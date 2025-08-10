@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcpaay2w7bg8h"]
+[gd_scene load_steps=13 format=3 uid="uid://bcpaay2w7bg8h"]
 
 [ext_resource type="PackedScene" uid="uid://d06w74txo46vq" path="res://scenes/terrain_2.tscn" id="1_7a3yw"]
 [ext_resource type="PackedScene" uid="uid://b75esojlycyay" path="res://scenes/basement_door.tscn" id="2_ggqgh"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dw5i4f446oq76" path="res://scenes/gate.tscn" id="10_58kkm"]
 [ext_resource type="PackedScene" uid="uid://doxrwhr352khr" path="res://scenes/fake_tree.tscn" id="11_kbqy4"]
 [ext_resource type="PackedScene" uid="uid://bflutwryf6nrp" path="res://scenes/tree_douglas.tscn" id="12_cpw6v"]
+[ext_resource type="PackedScene" uid="uid://k7rcx773mra8" path="res://scenes/bush.tscn" id="12_dg7e3"]
 [ext_resource type="PackedScene" uid="uid://3geliyexguky" path="res://scenes/security_shed.tscn" id="12_g3a10"]
 [ext_resource type="PackedScene" uid="uid://c5sk0j84shlje" path="res://scenes/cabin.tscn" id="12_tcemw"]
 
@@ -1244,3 +1245,6 @@ transform = Transform3D(1.21511, 0, -1.58855, 0, 2, 0, 1.58855, 0, 1.21511, 128.
 
 [node name="FakeTree24" parent="FakeTrees" instance=ExtResource("11_kbqy4")]
 transform = Transform3D(1.21511, 0, -1.58855, 0, 2, 0, 1.58855, 0, 1.21511, 147.816, 10.7651, -84.795)
+
+[node name="Bush" parent="." instance=ExtResource("12_dg7e3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -56.6896)

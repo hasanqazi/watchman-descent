@@ -40,6 +40,7 @@ enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg", "r
 
 enemies=""
 mirror_blood=""
+item=""
 
 [importer_defaults]
 

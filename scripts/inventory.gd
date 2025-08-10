@@ -2,6 +2,8 @@ extends Node3D
 
 var items: Array[Node] = []
 
+@export var player_cam: Camera3D
+
 func _ready() -> void:
 	SignalBus.add_item_to_inv.connect(_add_item_to_inv)
 

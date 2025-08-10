@@ -51,7 +51,6 @@ func changed_level(level: Global.Levels) -> void:
 					node.set_visible(true)
 				elif "visible" in node:
 					node.visible = true
-					
 
 		Global.Levels.MIRROR:
 			world_environment.environment = mirror_env

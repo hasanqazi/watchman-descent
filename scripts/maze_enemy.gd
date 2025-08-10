@@ -36,4 +36,7 @@ func update_target_location(target_location: Vector3) -> void:
 
 
 func _on_navigation_agent_3d_target_reached() -> void:
+	SignalBus.player_respawn.emit()
+	
+	queue_free()
 	print("Player killed")

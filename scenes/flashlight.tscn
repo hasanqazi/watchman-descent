@@ -8,7 +8,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ucrb"]
 size = Vector3(0.159912, 0.164047, 0.338684)
 
-[node name="flashlight" instance=ExtResource("2_owyqx")]
+[node name="flashlight" groups=["item"] instance=ExtResource("2_owyqx")]
 transform = Transform3D(1, 0, 0, 0, 0.986214, 0.165478, 0, -0.165478, 0.986214, 0, 0.0577693, 0)
 script = ExtResource("1_u85ar")
 interactable_name = "Flashlight"

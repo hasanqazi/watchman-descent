@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://v8b8qk6v2x41"]
+[gd_scene load_steps=10 format=3 uid="uid://v8b8qk6v2x41"]
 
 [ext_resource type="Shader" path="res://shaders/dithering.gdshader" id="1_gfj8x"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_w1nwm"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d06w74txo46vq" path="res://scenes/terrain_2.tscn" id="4_bgr8o"]
 [ext_resource type="PackedScene" uid="uid://bflutwryf6nrp" path="res://scenes/tree_douglas.tscn" id="5_72th5"]
 [ext_resource type="PackedScene" uid="uid://c5sk0j84shlje" path="res://scenes/cabin.tscn" id="6_qru1h"]
+[ext_resource type="PackedScene" uid="uid://k7rcx773mra8" path="res://scenes/bush.tscn" id="8_6sa1i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mtbj5"]
 shader = ExtResource("1_gfj8x")
@@ -110,5 +111,32 @@ light_energy = 16.0
 light_volumetric_fog_energy = 0.0
 omni_range = 5.53217
 omni_attenuation = -1.117
+
+[node name="Bush" parent="." instance=ExtResource("8_6sa1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.4699, 1.90735e-06, -69.7361)
+
+[node name="Bush2" parent="." instance=ExtResource("8_6sa1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3434, 9.53674e-07, -69.8968)
+
+[node name="Bush3" parent="." instance=ExtResource("8_6sa1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.3788, 9.53674e-07, -72.395)
+
+[node name="Bush4" parent="." instance=ExtResource("8_6sa1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.2621, 1.90735e-06, -77.9771)
+
+[node name="Bush5" parent="." instance=ExtResource("8_6sa1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.11, 1.90735e-06, -82.6701)
+
+[node name="Bush6" parent="." instance=ExtResource("8_6sa1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0859, 1.90735e-06, -82.77)
+
+[node name="Bush7" parent="." instance=ExtResource("8_6sa1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.6647, 1.90735e-06, -90.791)
+
+[node name="Bush8" parent="." instance=ExtResource("8_6sa1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4393, 2.86102e-06, -89.5386)
+
+[node name="Bush9" parent="." instance=ExtResource("8_6sa1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4642, 4.76837e-06, -65.8002)
 
 [connection signal="pressed" from="SubViewportContainer/SubViewport/Play" to="." method="_on_play_pressed"]

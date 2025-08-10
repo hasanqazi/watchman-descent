@@ -17,7 +17,12 @@ var lerp_speed: float = 10.0
 
 var direction: Vector3 = Vector3.ZERO
 
+@onready var player_cam: Camera3D = %PlayerCam
+@onready var respawn_button: TextureButton = %Respawn
+
 func _ready() -> void:
+	respawn_button.visible = false
+	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(event: InputEvent) -> void:
@@ -28,6 +33,7 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Global.player_immobile == true:
+		footstep_player.stop()
 		return
 	
 	# Handle speed
