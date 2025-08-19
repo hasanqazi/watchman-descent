@@ -3,7 +3,7 @@ extends Node3D
 @export var radius: float = 5.0:
 	set(value):
 		radius = max(value, 0.1)
-		if is_node_ready:
+		if _is_node_ready:
 			update_visuals()
 
 @onready var sprite: AnimatedSprite3D = $AnimatedSprite3D
@@ -11,10 +11,10 @@ extends Node3D
 @onready var cutoff_ring: MeshInstance3D = $CutoffRing
 @onready var main_camera: Camera3D = get_viewport().get_camera_3d()
 
-var is_node_ready: bool = false
+var _is_node_ready: bool = false
 
 func _ready() -> void:
-	is_node_ready = true
+	_is_node_ready = true
 	update_visuals()
 	teleport_sprite()
 	
@@ -29,7 +29,7 @@ func _ready() -> void:
 		#sprite.rotation.z = 0
 
 func update_visuals() -> void:
-	if not is_node_ready:
+	if not _is_node_ready:
 		return
 	
 	#update_sphere_visual()

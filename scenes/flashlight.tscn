@@ -45,3 +45,13 @@ spot_angle = 44.4077
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4"]
 stream = ExtResource("4_axku0")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(-3.98979e-07, 1, -8.69598e-07, -8.50627e-08)
+bones/2/rotation = Quaternion(0.0593651, 0.059177, 0.12772, 0.988262)
+bones/3/rotation = Quaternion(0.100113, 0.351127, 0.321706, 0.873609)
+bones/4/rotation = Quaternion(-0.203115, -0.580894, 0.580894, -0.532793)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(6.90531e-08, -0.267955, 0.59813, 0.755275)
+bones/7/rotation = Quaternion(0.0263409, 0.0791376, 0.992303, -0.0915375)
+bones/8/rotation = Quaternion(0.12198, -0.040601, 0.141093, 0.981614)

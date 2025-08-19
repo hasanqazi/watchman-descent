@@ -21,8 +21,8 @@ func type_dialogue_sequence(label: RichTextLabel, lines: Array[String], typerwri
 	for line in lines:
 		label.text = ""
 		var count: int = 0
-		for char in line:
-			label.text += char
+		for character in line:
+			label.text += character
 			if count % sound_interval == 0:
 				typerwriter_player.pitch_scale = randf_range(0.75, 0.85)
 				typerwriter_player.play()

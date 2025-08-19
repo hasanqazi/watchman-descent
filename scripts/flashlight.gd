@@ -5,6 +5,7 @@ extends Interactable
 
 @onready var spotlight: SpotLight3D = %FlashlightBulb
 @onready var ambient_bulb: SpotLight3D = %AmbientBulb
+@onready var arm: Node3D = $Armature
 
 @onready var audio_stream: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
@@ -12,8 +13,11 @@ func _ready() -> void:
 	interact_text = interact_text_override
 	spotlight.light_energy = 0
 	ambient_bulb.light_energy = 0
+	arm.visible = false
 
 func interact(player: CharacterBody3D) -> void:
+	arm.visible = true
+	
 	super(player)
 	SignalBus.add_item_to_inv.emit(self)
 	#queue_free()

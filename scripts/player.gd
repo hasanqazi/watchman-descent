@@ -84,7 +84,7 @@ func _apply_camera_bob(delta: float, horizontal_speed: float) -> void:
 	var freq := bob_freq_sprint if current_speed == sprinting_speed else bob_freq_walk
 	var amp := bob_amp_sprint if current_speed == sprinting_speed else bob_amp_walk
 	
-	var speed_factor = clamp(horizontal_speed / max(0.001, current_speed), 0.0, 1.25)
+	var speed_factor: float = clamp(horizontal_speed / max(0.001, current_speed), 0.0, 1.25)
 	_bob_t += delta * freq * speed_factor
 
 	var phase := _bob_t * (2.0 * PI)
