@@ -58,6 +58,7 @@ script = ExtResource("1_ylg5n")
 unique_name_in_owner = true
 
 [node name="stalker4" parent="." instance=ExtResource("2_fhaem")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0.00553015, -0.450726, -0.67044)
 
 [node name="Cube" parent="stalker4" index="0"]

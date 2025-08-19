@@ -1,12 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw5i4f446oq76"]
+[gd_scene load_steps=4 format=3 uid="uid://dw5i4f446oq76"]
 
 [ext_resource type="PackedScene" uid="uid://bnuyifcblxkvh" path="res://assets/models/gate.glb" id="1_bfqv2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7suho"]
+size = Vector3(2.83124, 6.87686, 0.203125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q0ddk"]
+size = Vector3(2.7384, 6.87939, 0.282654)
 
 [node name="Gate" type="Node3D"]
 
 [node name="gate" parent="." instance=ExtResource("1_bfqv2")]
 
-[node name="SpikesL" parent="gate" index="2"]
-transform = Transform3D(-1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, -6.83119, 1.83314, 0)
+[node name="Skeleton3D" parent="gate/Armature" index="0"]
+bones/0/rotation = Quaternion(3.32573e-08, -3.32573e-08, 0.707107, 0.707107)
+bones/1/rotation = Quaternion(0.144675, 0.144675, -0.692148, 0.692148)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="gate/Armature/Skeleton3D" index="0"]
+transform = Transform3D(0, -1, 0, 1, 0, -9.40658e-08, 9.40658e-08, 0, 1, 6.92474, 2.44419, 3.20272e-10)
+bone_name = "GateR"
+bone_idx = 0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="gate/Armature/Skeleton3D/BoneAttachment3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gate/Armature/Skeleton3D/BoneAttachment3D/StaticBody3D"]
+transform = Transform3D(1, 0, 2.16005e-12, 0, 1, 0, -2.16005e-12, 0, 1, -1.02957, 3.43843, 0.00390625)
+shape = SubResource("BoxShape3D_7suho")
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="gate/Armature/Skeleton3D" index="2"]
+transform = Transform3D(1.19209e-07, 1, 4.47035e-08, -0.916277, 1.19209e-07, -0.400546, -0.400546, -1.49012e-08, 0.916277, -6.92458, 2.44419, 3.10922e-08)
+bone_name = "GateL"
+bone_idx = 1
+
+[node name="StaticBody3D" type="StaticBody3D" parent="gate/Armature/Skeleton3D/BoneAttachment3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gate/Armature/Skeleton3D/BoneAttachment3D2/StaticBody3D"]
+transform = Transform3D(0.913268, -2.9754e-14, -0.407358, -9.52016e-15, 1, 1.88249e-12, 0.407358, -6.21725e-15, 0.913269, 0.978699, 3.43579, 0.439117)
+shape = SubResource("BoxShape3D_q0ddk")
 
 [editable path="gate"]
