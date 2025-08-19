@@ -23,6 +23,10 @@ material = SubResource("StandardMaterial3D_rocxm")
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_ccqpj")
+bob_amp_walk = 0.02
+bob_amp_sprint = 0.05
+bob_freq_walk = 1.0
+bob_freq_sprint = 2.0
 
 [node name="Head" type="Node3D" parent="."]
 unique_name_in_owner = true

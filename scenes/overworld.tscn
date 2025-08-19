@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://clgq07hc0fwx3"]
+[gd_scene load_steps=13 format=3 uid="uid://clgq07hc0fwx3"]
 
 [ext_resource type="Script" path="res://scripts/overworld.gd" id="1_tyxf3"]
 [ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="1_vqljy"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dir70hrc2tyki" path="res://scenes/blood.tscn" id="10_5l5qi"]
 [ext_resource type="PackedScene" uid="uid://1k4xls1mkqrb" path="res://scenes/main_maze.tscn" id="10_q6acv"]
 [ext_resource type="PackedScene" uid="uid://t8r7i8lci08b" path="res://scenes/maze_jumpscare.tscn" id="11_h13k7"]
+[ext_resource type="PackedScene" uid="uid://cd5w20eiru0s7" path="res://scenes/end_trigger.tscn" id="12_wl455"]
 
 [node name="Overworld" type="Node3D" node_paths=PackedStringArray("door_unlocked_dialogue")]
 script = ExtResource("1_tyxf3")
@@ -102,6 +103,9 @@ transform = Transform3D(2.91213, 8.34277e-09, 0.396269, 0.56622, -4.29078e-08, -
 [node name="MazeJumpscare" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_h13k7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.9547, 0)
 player = NodePath("../RetroPlayer/SubViewportContainer/SubViewport/Player")
+
+[node name="EndTrigger" parent="." instance=ExtResource("12_wl455")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 69.1356, 0, -83.294)
 
 [editable path="RetroPlayer"]
 [editable path="RetroPlayer/SubViewportContainer/SubViewport/Player"]

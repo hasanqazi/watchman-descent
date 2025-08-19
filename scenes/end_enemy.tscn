@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cy4sjcypno11g"]
+[gd_scene load_steps=3 format=3 uid="uid://cy4sjcypno11g"]
 
 [ext_resource type="Script" path="res://scripts/end_enemy.gd" id="1_n6oib"]
+[ext_resource type="Texture2D" uid="uid://fsdktsncb1up" path="res://icon.png" id="2_dtekv"]
 
 [node name="EndEnemy" type="Node3D" groups=["enemies"]]
 script = ExtResource("1_n6oib")
+sprite_texture = ExtResource("2_dtekv")
