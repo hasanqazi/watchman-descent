@@ -3,6 +3,7 @@ extends Node3D
 @export var player: CharacterBody3D
 @export var maze_enemy: PackedScene = preload("res://scenes/maze_enemy.tscn")
 @export var mirror_enemy: PackedScene = preload("res://scenes/mirror_enemy.tscn")
+@export var end_enemy: PackedScene = preload("res://scenes/end_enemy.tscn")
 var spawn_points: Array[Node] = []
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var mirror_timer: Timer = $MirrorTimer
@@ -71,3 +72,9 @@ func spawn_mirror_enemy() -> void:
 
 	enemy_instance.global_transform.origin = player.global_transform.origin + Vector3(0, 0, 5)
 	print("Mirror Enemy spawned")
+
+func spawn_end_enemy() -> void:
+	var enemy_instance: Node3D = end_enemy.instantiate()
+	add_child(enemy_instance)
+
+	print("End Enemy spawned")

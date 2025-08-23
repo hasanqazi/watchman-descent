@@ -7,7 +7,7 @@ func _ready() -> void:
 	visible = false
 	anim_player.play("Moving")
 	
-	SignalBus.turn_on_sprite.connect(turn_on_sprite)
+	SignalBus.toggle_sprite.connect(toggle_sprite)
 
-func turn_on_sprite() -> void:
-	visible = true
+func toggle_sprite() -> void:
+	visible = !visible
