@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ccejkq2fk2ey"]
+[gd_scene load_steps=17 format=3 uid="uid://ccejkq2fk2ey"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ccqpj"]
 [ext_resource type="Script" path="res://scripts/interact.gd" id="2_wl2v4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/interact_text.gd" id="3_kysu0"]
 [ext_resource type="Script" path="res://scripts/interact_sound.gd" id="4_f6jjm"]
 [ext_resource type="Texture2D" uid="uid://l1atief8dt6g" path="res://assets/texture/loading.png" id="4_qp7pp"]
+[ext_resource type="PackedScene" uid="uid://lk3vlfi3pibn" path="res://scenes/options.tscn" id="4_rfvyv"]
 [ext_resource type="Script" path="res://scripts/notes_viewer.gd" id="4_tmdrh"]
 [ext_resource type="Texture2D" uid="uid://xtpp3d5rbmap" path="res://assets/texture/close.png" id="5_nrg6e"]
 [ext_resource type="Script" path="res://scripts/dialogue_text.gd" id="8_qv0qh"]
@@ -158,6 +159,10 @@ offset_bottom = 864.0
 texture_normal = ExtResource("9_aow2x")
 script = ExtResource("10_0h6a1")
 player = NodePath("../..")
+
+[node name="Options" parent="Control" instance=ExtResource("4_rfvyv")]
+visible = false
+layout_mode = 1
 
 [node name="InteractSound" type="AudioStreamPlayer" parent="."]
 script = ExtResource("4_f6jjm")

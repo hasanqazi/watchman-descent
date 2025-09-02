@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dua5txrm85020"]
+
+[ext_resource type="PackedScene" uid="uid://37ofsocbdy0w" path="res://assets/models/lamp.glb" id="1_knfot"]
+
+[node name="Lamp" type="Node3D"]
+
+[node name="lamp" parent="." instance=ExtResource("1_knfot")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 7.63082e-10, 1.30179e-09, -1.50873e-09, 0.520518, 0.853851, -2.60462e-11, -0.853851, 0.520518, 0, 0.412774, -0.233227)
+light_color = Color(1, 0.803922, 0.439216, 1)
+shadow_enabled = true
+spot_range = 1.50111
+spot_angle = 42.2803

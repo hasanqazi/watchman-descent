@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://cv2a5ud16klht"]
+
+[ext_resource type="Script" path="res://scripts/end_cutscene.gd" id="1_d0lym"]
+[ext_resource type="PackedScene" uid="uid://bcpaay2w7bg8h" path="res://scenes/forest.tscn" id="1_kmaai"]
+[ext_resource type="Shader" path="res://shaders/dithering.gdshader" id="2_8akm8"]
+[ext_resource type="PackedScene" uid="uid://dir70hrc2tyki" path="res://scenes/blood.tscn" id="3_hoep3"]
+[ext_resource type="Environment" uid="uid://clqya5cgfgt4t" path="res://resources/end_cutscene.tres" id="5_wr51s"]
+[ext_resource type="AudioStream" uid="uid://bfk4exbg8h15v" path="res://resources/forest_ambience.tres" id="6_ub6j7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g8pax"]
+shader = ExtResource("2_8akm8")
+shader_parameter/change_color_depth = true
+shader_parameter/target_color_depth = 4
+shader_parameter/dithering = true
+shader_parameter/scale_resolution = true
+shader_parameter/target_resolution_scale = 3
+shader_parameter/enable_recolor = false
+
+[node name="EndCutscene" type="Node3D" node_paths=PackedStringArray("door")]
+script = ExtResource("1_d0lym")
+door = NodePath("SubViewportContainer/SubViewport/Forest/Security Shed/door_2")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_g8pax")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+audio_listener_enable_3d = true
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Forest" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_kmaai")]
+
+[node name="Blood" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_hoep3")]
+transform = Transform3D(2.58969, 0, 0, 0, 1, 0, 0, 0, 2.34324, 69.5469, 0.00880814, -86.5697)
+
+[node name="Blood2" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_hoep3")]
+transform = Transform3D(-2.48449e-08, -1, 5.31333e-08, 0.568386, -4.37114e-08, -1.21555, 1.17881, 0, 0.586102, 73.2417, 1.8029, -88.9019)
+
+[node name="Blood3" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_hoep3")]
+transform = Transform3D(2.4987, 0, 0, 0, 1, 0, 0, 0, 2.19467, 71.3865, 0.00880861, -88.9249)
+
+[node name="Blood4" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_hoep3")]
+transform = Transform3D(2.91213, 8.34277e-09, 0.396269, 0.56622, -4.29078e-08, -2.03806, 0, 1, -9.07546e-08, 69.7877, 1.53616, -90.5889)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5626, 2.17033, -79.7595)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("5_wr51s")
+
+[node name="AmbientSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ub6j7")
+volume_db = -15.0
+autoplay = true
+
+[editable path="SubViewportContainer/SubViewport/Forest"]
+[editable path="SubViewportContainer/SubViewport/Forest/Security Shed"]
+[editable path="SubViewportContainer/SubViewport/Forest/Security Shed/security_shed"]

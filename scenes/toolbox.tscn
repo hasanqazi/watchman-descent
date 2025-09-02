@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtxfho05n5s6m"]
+
+[ext_resource type="PackedScene" uid="uid://bknfsbjafym8f" path="res://assets/models/toolbox.glb" id="1_yaf5d"]
+
+[node name="Toolbox" type="Node3D"]
+
+[node name="toolbox" parent="." instance=ExtResource("1_yaf5d")]

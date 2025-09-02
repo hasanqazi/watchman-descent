@@ -15,6 +15,8 @@ func _ready() -> void:
 	
 	mirror_timer.connect("timeout", _on_mirror_timer_timeout)
 
+	SignalBus._on_spawn_end_enemy.connect(_on_spawn_end_enemy)
+
 func _physics_process(_delta: float) -> void:
 	get_tree().call_group("enemies", "update_target_location", player.global_transform.origin)
 	
@@ -40,6 +42,8 @@ func _on_mirror_timer_timeout() -> void:
 	if Global.current_level == Global.Levels.MIRROR:
 		spawn_mirror_enemy()
 
+func _on_spawn_end_enemy() -> void:
+	spawn_end_enemy()
 
 func spawn_maze_enemy() -> void:
 	var player_pos: Vector3 = player.global_transform.origin
@@ -77,4 +81,5 @@ func spawn_end_enemy() -> void:
 	var enemy_instance: Node3D = end_enemy.instantiate()
 	add_child(enemy_instance)
 
+	enemy_instance.global_transform.origin = player.global_transform.origin
 	print("End Enemy spawned")

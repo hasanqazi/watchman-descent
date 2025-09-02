@@ -97,9 +97,6 @@ transform = Transform3D(1, 0, 0, 0, -2.98023e-08, 1, 0, -1, -2.98023e-08, 0, -0.
 shadow_reverse_cull_face = true
 
 [node name="EndEnemy" parent="." instance=ExtResource("14_rxct2")]
-radius = 20.0
-min_radius = 7.0
-move_speed = 1.0
 
 [editable path="guardhouse"]
 [editable path="RetroPlayer"]

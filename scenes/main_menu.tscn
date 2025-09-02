@@ -1,14 +1,21 @@
-[gd_scene load_steps=17 format=4 uid="uid://v8b8qk6v2x41"]
+[gd_scene load_steps=24 format=4 uid="uid://v8b8qk6v2x41"]
 
 [ext_resource type="Shader" path="res://shaders/dithering.gdshader" id="1_gfj8x"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_w1nwm"]
+[ext_resource type="Texture2D" uid="uid://ubjg21ntn3ie" path="res://assets/texture/play.png" id="3_02m50"]
 [ext_resource type="Texture2D" uid="uid://bxy2nqargk0aa" path="res://assets/texture/title.png" id="3_p7bqs"]
 [ext_resource type="Environment" uid="uid://bn2ohft3vj10p" path="res://resources/forest.tres" id="3_r2pom"]
 [ext_resource type="PackedScene" uid="uid://d06w74txo46vq" path="res://scenes/terrain_2.tscn" id="4_bgr8o"]
+[ext_resource type="Texture2D" uid="uid://bvo8i4r0e3xg3" path="res://assets/texture/play_hover.png" id="4_jy30m"]
 [ext_resource type="PackedScene" uid="uid://bflutwryf6nrp" path="res://scenes/tree_douglas.tscn" id="5_72th5"]
+[ext_resource type="Texture2D" uid="uid://camvt8myofcbs" path="res://assets/texture/options.png" id="5_iucth"]
+[ext_resource type="Texture2D" uid="uid://bglnl6l68c773" path="res://assets/texture/options_hover.png" id="6_a1udb"]
+[ext_resource type="Texture2D" uid="uid://4bh68ebdi5sj" path="res://assets/texture/quit.png" id="6_ebipx"]
 [ext_resource type="PackedScene" uid="uid://c5sk0j84shlje" path="res://scenes/cabin.tscn" id="6_qru1h"]
+[ext_resource type="Texture2D" uid="uid://cg1uslhxmsaui" path="res://assets/texture/quit_hover.png" id="7_8x6bq"]
 [ext_resource type="PackedScene" uid="uid://k7rcx773mra8" path="res://scenes/bush.tscn" id="8_6sa1i"]
 [ext_resource type="Shader" path="res://addons/simplegrasstextured/shaders/grass.gdshader" id="9_ed8ow"]
+[ext_resource type="PackedScene" uid="uid://lk3vlfi3pibn" path="res://scenes/options.tscn" id="10_l4ru8"]
 [ext_resource type="Texture2D" uid="uid://d2xn1p2e6k7u5" path="res://addons/simplegrasstextured/textures/tall-grass.png" id="10_qwolt"]
 [ext_resource type="Script" path="res://addons/simplegrasstextured/grass.gd" id="11_xahcn"]
 [ext_resource type="PackedScene" uid="uid://bmbs820t00b8c" path="res://scenes/lamp_post.tscn" id="12_0gm8r"]
@@ -83,7 +90,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
-metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
@@ -91,17 +97,41 @@ audio_listener_enable_3d = true
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="Play" type="Button" parent="SubViewportContainer/SubViewport"]
+[node name="Play" type="TextureButton" parent="SubViewportContainer/SubViewport"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 176.0
-offset_top = -350.0
-offset_right = 436.0
-offset_bottom = -259.0
+offset_left = 75.0
+offset_top = -400.0
+offset_right = 408.0
+offset_bottom = -300.0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 40
-text = "Play"
+texture_normal = ExtResource("3_02m50")
+texture_hover = ExtResource("4_jy30m")
+
+[node name="Options" type="TextureButton" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -275.0
+offset_right = 408.0
+offset_bottom = -175.0
+grow_vertical = 0
+texture_normal = ExtResource("5_iucth")
+texture_hover = ExtResource("6_a1udb")
+
+[node name="Quit" type="TextureButton" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -150.0
+offset_right = 408.0
+offset_bottom = -50.0
+grow_vertical = 0
+texture_normal = ExtResource("6_ebipx")
+texture_hover = ExtResource("7_8x6bq")
 
 [node name="Title" type="TextureRect" parent="SubViewportContainer/SubViewport"]
 offset_left = 160.0
@@ -109,6 +139,9 @@ offset_right = 1440.0
 offset_bottom = 720.0
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("3_p7bqs")
+
+[node name="Options2" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_l4ru8")]
+visible = false
 
 [node name="terrain2" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_bgr8o")]
 
@@ -215,3 +248,5 @@ metadata/SimpleGrassTextured = "2.0.5"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8949, 0, -69.5108)
 
 [connection signal="pressed" from="SubViewportContainer/SubViewport/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/Quit" to="." method="_on_quit_pressed"]

@@ -1,7 +1,10 @@
 extends Node
 
 var player_immobile: bool = false
+var movement_immobile: bool = false
 var flashlight_powered: bool = false
+
+var volume_value: float = 100
 
 
 var interact_bind: String = InputMap.action_get_events("interact")[0].as_text().replace(" (Physical)", "")

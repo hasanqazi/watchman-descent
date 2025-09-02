@@ -42,7 +42,7 @@ func _input(event: InputEvent) -> void:
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-head_clamp), deg_to_rad(head_clamp))
 
 func _physics_process(delta: float) -> void:
-	if Global.player_immobile == true:
+	if Global.player_immobile == true or Global.movement_immobile == true:
 		footstep_player.stop()
 		_reset_camera(delta)
 		return
