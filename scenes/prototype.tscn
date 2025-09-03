@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://035xh7ircirs"]
+[gd_scene load_steps=19 format=3 uid="uid://035xh7ircirs"]
 
 [ext_resource type="PackedScene" uid="uid://bsoagng253ngu" path="res://scenes/guardhouse.tscn" id="1_675l3"]
 [ext_resource type="PackedScene" uid="uid://b0e304ng4h18u" path="res://scenes/cctv_pole.tscn" id="2_aj4p5"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bx3ufi2rd0kol" path="res://scenes/dialogue_trigger.tscn" id="12_3a6o8"]
 [ext_resource type="PackedScene" uid="uid://bb7yqqjyuxkdh" path="res://scenes/indus_light.tscn" id="13_qmm65"]
 [ext_resource type="PackedScene" uid="uid://cy4sjcypno11g" path="res://scenes/end_enemy.tscn" id="14_rxct2"]
+[ext_resource type="PackedScene" uid="uid://bnxrrg2h4e7c5" path="res://scenes/dialogue_tree.tscn" id="15_ihgjl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sq4vu"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -97,7 +98,16 @@ transform = Transform3D(1, 0, 0, 0, -2.98023e-08, 1, 0, -1, -2.98023e-08, 0, -0.
 shadow_reverse_cull_face = true
 
 [node name="EndEnemy" parent="." instance=ExtResource("14_rxct2")]
+sprite_size = 0.2
+sprite_height = 1.0
+
+[node name="DialogueTree" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_ihgjl")]
+player = NodePath("../RetroPlayer/SubViewportContainer/SubViewport/Player")
+
+[node name="Point2" parent="DialogueTree" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3849, 0, 16.2084)
 
 [editable path="guardhouse"]
 [editable path="RetroPlayer"]
 [editable path="indus_light"]
+[editable path="DialogueTree"]

@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://cy4sjcypno11g"]
 
 [ext_resource type="Script" path="res://scripts/end_enemy.gd" id="1_n6oib"]
-[ext_resource type="Texture2D" uid="uid://fsdktsncb1up" path="res://icon.png" id="2_dtekv"]
+[ext_resource type="Texture2D" uid="uid://x5k5613xal48" path="res://assets/texture/priest_end.png" id="2_ivau0"]
 
 [node name="EndEnemy" type="Node3D" groups=["enemies"]]
 script = ExtResource("1_n6oib")
 radius = 20.0
 min_radius = 7.0
 move_speed = 1.0
-sprite_texture = ExtResource("2_dtekv")
+sprite_texture = ExtResource("2_ivau0")
 end_scene = "res://scenes/end_cutscene.tscn"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://clgq07hc0fwx3"]
+[gd_scene load_steps=15 format=3 uid="uid://clgq07hc0fwx3"]
 
 [ext_resource type="Script" path="res://scripts/overworld.gd" id="1_tyxf3"]
 [ext_resource type="PackedScene" uid="uid://b2gih8qaec3d8" path="res://scenes/retro_player.tscn" id="1_vqljy"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://t8r7i8lci08b" path="res://scenes/maze_jumpscare.tscn" id="11_h13k7"]
 [ext_resource type="PackedScene" uid="uid://cd5w20eiru0s7" path="res://scenes/end_trigger.tscn" id="12_wl455"]
 [ext_resource type="PackedScene" uid="uid://dus6bqrdijbon" path="res://scenes/scene_trigger.tscn" id="13_oct5y"]
+[ext_resource type="PackedScene" uid="uid://bnxrrg2h4e7c5" path="res://scenes/dialogue_tree.tscn" id="14_50lcf"]
 
 [node name="Overworld" type="Node3D" node_paths=PackedStringArray("door_unlocked_dialogue")]
 script = ExtResource("1_tyxf3")
@@ -111,6 +112,13 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 69.135
 [node name="SceneTrigger" parent="." instance=ExtResource("13_oct5y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.094, 1.90735e-06, -26.2447)
 
+[node name="DialogueTree" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_50lcf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.3341, 0, -75.2513)
+player = NodePath("../RetroPlayer/SubViewportContainer/SubViewport/Player")
+
+[node name="Point2" parent="DialogueTree" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124.074, 0, 138.297)
+
 [editable path="RetroPlayer"]
 [editable path="RetroPlayer/SubViewportContainer/SubViewport/Player"]
 [editable path="Forest"]
@@ -120,3 +128,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.094, 1.90735e-06, -26.244
 [editable path="MainMaze/NavigationRegion3D/maze_2"]
 [editable path="MainMaze/Maze Enter"]
 [editable path="MainMaze/Maze Exit"]
+[editable path="DialogueTree"]

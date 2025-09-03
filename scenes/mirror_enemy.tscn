@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bpi2fetqknkoa"]
+[gd_scene load_steps=24 format=3 uid="uid://bpi2fetqknkoa"]
 
 [ext_resource type="Script" path="res://scripts/mirror_enemy.gd" id="1_lh008"]
 [ext_resource type="Texture2D" uid="uid://dntacfy0hbqtq" path="res://assets/texture/mouth/_a_frm0,70.png" id="2_btd1o"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b8kqirmetqqe8" path="res://assets/texture/mouth/_a_frm17,70.png" id="19_i5cpk"]
 [ext_resource type="Texture2D" uid="uid://phqbnysbujpg" path="res://assets/texture/mouth/_a_frm18,70.png" id="20_d3h8a"]
 [ext_resource type="Texture2D" uid="uid://drqbjg7shr4n7" path="res://assets/texture/mouth/_a_frm19,70.png" id="21_pcgci"]
+[ext_resource type="AudioStream" uid="uid://bicter0c604b8" path="res://assets/audio/whispers.wav" id="22_nd4t0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xqlsw"]
 animations = [{
@@ -96,6 +97,10 @@ script = ExtResource("1_lh008")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_xqlsw")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AnimatedSprite3D"]
+stream = ExtResource("22_nd4t0")
+autoplay = true
 
 [node name="SphereVisual" type="MeshInstance3D" parent="."]
 

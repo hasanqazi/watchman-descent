@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnxrrg2h4e7c5"]
+
+[ext_resource type="Script" path="res://scripts/dialogue_tree.gd" id="1_ayr31"]
+
+[node name="DialogueTree" type="Node3D"]
+script = ExtResource("1_ayr31")
+
+[node name="Point1" type="Marker3D" parent="."]
+
+[node name="Point2" type="Marker3D" parent="."]

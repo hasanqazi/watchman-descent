@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=4 uid="uid://v8b8qk6v2x41"]
+[gd_scene load_steps=25 format=4 uid="uid://v8b8qk6v2x41"]
 
 [ext_resource type="Shader" path="res://shaders/dithering.gdshader" id="1_gfj8x"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_w1nwm"]
+[ext_resource type="AudioStream" uid="uid://lvrefw3gge1s" path="res://assets/audio/button_click.wav" id="2_1ots1"]
 [ext_resource type="Texture2D" uid="uid://ubjg21ntn3ie" path="res://assets/texture/play.png" id="3_02m50"]
 [ext_resource type="Texture2D" uid="uid://bxy2nqargk0aa" path="res://assets/texture/title.png" id="3_p7bqs"]
 [ext_resource type="Environment" uid="uid://bn2ohft3vj10p" path="res://resources/forest.tres" id="3_r2pom"]
@@ -81,6 +82,7 @@ buffer = PackedFloat32Array(-0.90146, 0, -0.432863, 35.8586, 0, 1, 0, 0, 0.43286
 [node name="MainMenu" type="Node3D"]
 script = ExtResource("1_w1nwm")
 intro_scene = "res://scenes/intro_scene.tscn"
+button_sound = ExtResource("2_1ots1")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_mtbj5")

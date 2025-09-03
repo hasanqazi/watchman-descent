@@ -4,6 +4,8 @@ extends Control
 @onready var volume_slider: HSlider = $VolumeSlider
 @onready var fullscreen: CheckBox = $FullscreenToggle
 
+@export var button_sound: AudioStream
+
 var mouse_toggled: bool = false
 
 func _ready() -> void:
@@ -31,7 +33,7 @@ func _on_volume_slider_value_changed(value: float) -> void:
 	
 	AudioServer.set_bus_volume_db(0, linear_to_db(value / 100.0))
 
-func _on_toggle_options(toggle: bool):
+func _on_toggle_options(toggle: bool) -> void:
 	visible = toggle
 	
 	if toggle == true:
@@ -49,4 +51,5 @@ func _on_toggle_options(toggle: bool):
 
 
 func _on_close_pressed() -> void:
+	SignalBus.play_options_audio.emit(button_sound)
 	_on_toggle_options(false)

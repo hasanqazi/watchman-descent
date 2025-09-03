@@ -21,6 +21,7 @@ SceneLoader="*res://addons/maaacks_scene_loader/base/scenes/autoloads/scene_load
 SignalBus="*res://scripts/signal_bus.gd"
 Global="*res://scripts/global.gd"
 SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
+OptionsButton="*res://scenes/options_button.tscn"
 
 [debug]
 

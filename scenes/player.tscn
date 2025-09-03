@@ -170,6 +170,7 @@ script = ExtResource("4_f6jjm")
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("10_ikjml")
+volume_db = -1.0
 
 [connection signal="pressed" from="Control/NotesViewer/CloseButton" to="Control/NotesViewer" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Control/Respawn" to="Control/Respawn" method="_on_pressed"]
